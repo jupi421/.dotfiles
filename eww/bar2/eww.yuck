@@ -152,11 +152,14 @@
 
   	(button		:class "button-reb"					
 	  			:tooltip "Reboot"		 
-				:onclick "reboot"	"")))
+				:onclick "reboot"	"")
 
 	(button		:class "button-off"					
 				:tooltip "Shutdown"		 
-				:onclick "shutdown now"	""))))
+				:onclick "shutdown now"	"")))
+
+	(button		:class "OS-logo"
+				:onclick "" ""))))
 (defvar power false)
 
 ;; Top Widgets ;;

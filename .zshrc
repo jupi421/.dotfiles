@@ -45,3 +45,4 @@ fi
 source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

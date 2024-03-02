@@ -28,7 +28,6 @@
   };
 
   home.packages = with pkgs; [
-    autojump
     blueman
     brightnessctl
     eww
@@ -58,6 +57,7 @@
 	wmctrl
 	xclip
 	xorg.xprop
+	zoxide
 	zsh
 
 	# fonts
