@@ -75,7 +75,7 @@ keys = [
     # toggle floating windows
     Key([mod], "f", lazy.window.toggle_floating()),
     # toggle fullscreen mode
-    Key("F11", lazy.window.toggle_fullscreen())
+    Key([], "F11", lazy.window.toggle_fullscreen())
 ]
 
 groups =[]
@@ -127,7 +127,7 @@ keys.extend([
     Key(["mod1"], "2", lazy.group['scratchpad'].dropdown_toggle('Filemanager')),
     Key(["mod1"], "3", lazy.group['scratchpad'].dropdown_toggle('Calculator'))])
 
-layout_theme = {"border_width": 2,
+layout_theme = {"border_width": 3,
                 "margin": 8,
                 #"border_focus": "e1acff",
                 "border_focus": "89B4FA", #"7678ed",
