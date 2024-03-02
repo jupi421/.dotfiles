@@ -1,4 +1,4 @@
-{vconfig, pkgs, ... }:
+{config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -71,7 +71,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = ./nvim;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim;
 	".config/qtile".source = ./qtile;
 	".config/picom".source = ./picom;
 	".config/eww".source = ./eww;

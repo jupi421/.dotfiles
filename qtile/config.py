@@ -73,7 +73,9 @@ keys = [
     Key([mod], "d", lazy.spawn("rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi"), desc="open rofi"),
     Key([mod], "t", lazy.spawn("rofi -show window -config ~/.config/rofi/rofidmenu.rasi"), desc="open roi window display"),
     # toggle floating windows
-    Key([mod], "f", lazy.window.toggle_floating()) 
+    Key([mod], "f", lazy.window.toggle_floating()),
+    # toggle fullscreen mode
+    Key([mod], "F11", lazy.window.toggle_fullscreen())
 ]
 
 groups =[]
