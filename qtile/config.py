@@ -75,7 +75,7 @@ keys = [
     # toggle floating windows
     Key([mod], "f", lazy.window.toggle_floating()),
     # toggle fullscreen mode
-    Key([mod], "F11", lazy.window.toggle_fullscreen())
+    Key("F11", lazy.window.toggle_fullscreen())
 ]
 
 groups =[]
