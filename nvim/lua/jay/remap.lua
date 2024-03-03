@@ -1,7 +1,7 @@
 --leader
 vim.g.mapleader = " "
---nvim tree
-vim.keymap.set("n", "<leader>fb", vim.cmd.Ex)
+--netrw
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 --esc keymap
 vim.keymap.set("i", "kj", "<esc>")
 vim.keymap.set("v", "df", "<esc>")
@@ -11,6 +11,8 @@ vim.keymap.set("n", "j", "jzz")
 vim.keymap.set("n", "k", "kzz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 --move highlighted lines
 vim.keymap.set("v", "K", ":m -2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+<CR>gv=gv")
@@ -38,9 +40,7 @@ vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set( 'n', 'j', [[v:count ? (v:count >= 2 ? "m'" . v:count : '') . 'jzz' : 'jzz']], { noremap = true, expr = true })
 vim.keymap.set( 'n', 'k', [[v:count ? (v:count >= 2 ? "m'" . v:count : '') . 'kzz' : 'kzz']], { noremap = true, expr = true })
 --kesizing splits
-vim.keymap.set("n", "<C-+>", "<cmd>vertical resize +5<CR>")
-vim.keymap.set("n", "<C-->", "<cmd>vertical resize -5<CR>")
-vim.keymap.set("n", "<C-ü>", "<cmd>resize -5<CR>")
-vim.keymap.set("n", "<C-ä>", "<cmd>resize +5<CR>")
-
-vim.keymap.set('n', '<leader><CR>', '<cmd>call jukit#send#selection()<CR>')
+vim.keymap.set("n", "+", "<cmd>vertical resize +5<CR>")
+vim.keymap.set("n", "_", "<cmd>vertical resize -5<CR>")
+vim.keymap.set("n", "<C-=>", "<cmd>resize -5<CR>")
+vim.keymap.set("n", "<C-->", "<cmd>resize +5<CR>")
