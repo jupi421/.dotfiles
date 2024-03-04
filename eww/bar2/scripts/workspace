@@ -60,9 +60,9 @@ symbol4=""
 symbol5=""
 symbol6=""
 symbol7=""
-symbol8=""
+symbol8="󱞁"
 symbol9=""
-symbol10=""
+symbol10=""
 
 echo 	"(box	:class \"works\" :orientation \"v\"	:halign \"center\"	:valign \"start\"	 :space-evenly \"false\" :spacing \"-5\" $(create_button "$ws1" "$un" "$o1" "$f1" "$symbol1") $(create_button "$ws2" "$un" "$o2" "$f2" "$symbol2") $(create_button "$ws3" "$un" "$o3" "$f3" "$symbol3") $(create_button "$ws4" "$un" "$o4" "$f4" "$symbol4") $(create_button "$ws5" "$un" "$o5" "$f5" "$symbol5") $(create_button "$ws6" "$un" "$o6" "$f6" "$symbol6") $(create_button "$ws7" "$un" "$o7" "$f7" "$symbol7") $(create_button "$ws8" "$un" "$o8" "$f8" "$symbol8") $(create_button "$ws9" "$un" "$o9" "$f9" "$symbol9") $(create_button "$ws10" "$un" "$o10" "$f10" "$symbol10"))"
 }

@@ -39,6 +39,7 @@
     flameshot
 	htop
     kitty
+	obsidian
     picom
     qtile
 	ripgrep
