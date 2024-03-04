@@ -6,7 +6,8 @@ return {
 	config = function()
 		require("ibl").setup({
 			scope = {
-				show_start = false
+				show_start = false,
+				show_start = false,
 			}
 		})
 	end

@@ -38,8 +38,16 @@
   #   useXkbConfig = true; # use xkb.options in tty.  };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true; services.xserver.windowManager.qtile.enable =
-true;
+  services.xserver.enable = true;
+  services.xserver.windowManager.qtile.enable = true;
+  # Configure LightDM for auto-login
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    autoLogin = {
+      enable = true;
+      user = "jay"; # Replace 'yourUserName' with your actual username
+    };
+  };
 
 
   services.auto-cpufreq.enable = true; 

@@ -57,6 +57,7 @@
 	wmctrl
 	xclip
 	xorg.xprop
+	xournalpp
 	zoxide
 	zsh
 
