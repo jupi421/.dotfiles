@@ -18,10 +18,10 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey kj vi-cmd-mode
+bindkey jj vi-cmd-mode
 
 # aliases
-alias v="nvim"
+alias v="steam-run nvim"
 alias l="ls --color=auto -l"
 alias la="ls --color=auto -la"
 alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"

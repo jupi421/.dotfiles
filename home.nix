@@ -18,7 +18,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+  };
   programs.zsh.enableCompletion = true;
   home.sessionVariables.SHELL = pkgs.zsh;
 
@@ -30,31 +32,32 @@
   home.packages = with pkgs; [
     blueman
     brightnessctl
-    eww
-    dmenu
-    dunst
-    fd
+	dmenu
+	dunst
+	eww
+	fd
 	fzf
-    firefox
-    flameshot
+	firefox
+	flameshot
 	htop
-    kitty
+	kitty
 	obsidian
-    picom
-    qtile
+	picom
+	qtile
 	ripgrep
-    rofi
+	rofi
 	sassc
 	starship
+	steam-run
 	spotify
 	teams-for-linux
-    telegram-desktop
-    neofetch
+	telegram-desktop
+	neofetch
 	neovim
 	nitrogen
 	notify
-    whatsapp-for-linux
-    webcord
+	whatsapp-for-linux
+	webcord
 	wmctrl
 	xclip
 	xorg.xprop

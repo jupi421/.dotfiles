@@ -3,9 +3,9 @@ vim.g.mapleader = " "
 --netrw
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 --esc keymap
-vim.keymap.set("i", "kj", "<esc>")
-vim.keymap.set("v", "df", "<esc>")
-vim.keymap.set("c", "kj", "<esc>")
+vim.keymap.set("i", "jj", "<esc>")
+vim.keymap.set("v", "ww", "<esc>")
+vim.keymap.set("c", "jj", "<esc>")
 --vertical movements
 vim.keymap.set("n", "j", "jzz")
 vim.keymap.set("n", "k", "kzz")
