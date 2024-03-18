@@ -49,15 +49,20 @@
     };
   };
 
+  services.tlp = {
+	  enable = true;
+	  settings = {
+		  START_CHARGE_THRESH_BAT0 = 75;
+		  STOP_CHARGE_THRESH_BAT0 = 80;
+		  
+	  };
+  };
 
   services.auto-cpufreq.enable = true; 
   services.auto-cpufreq.settings = {
     battery = {
     	 governor = "powersave";
     	 turbo = "never";
-    	 enable_thresholds = true;
-    	 start_threshold = 75;
-    	 stop_threshold = 80;
     };
     charger = {
     	 governor = "performance";

@@ -115,4 +115,14 @@ return {
 			img_folder = "Assets/img",  -- This is the default
 		},
 	},
+
+--	config = function ()
+--		vim.keymap.set("n", "<leader>on", function ()
+--			local noteName = vim.fn.input("Note Name > ")
+--			vim.cmd('ObsidianNew ' .. noteName)
+--		end, {noremap = true, silent = true})
+--	--	vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>")
+--	--	vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLink<CR>")
+--	end
+--
 }
