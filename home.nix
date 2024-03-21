@@ -53,6 +53,7 @@
 	teams-for-linux
 	telegram-desktop
 	neofetch
+	python311Packages.pip
 	neovim
 	nitrogen
 	notify

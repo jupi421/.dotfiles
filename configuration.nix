@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 
 
@@ -11,6 +11,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 	  ./suspend_then_hibernate.nix
+	  #inputs.xremap-flake.nixosModules.default
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -74,11 +75,22 @@
   # Configure keymap in X11 services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Set the keyboard layout
-  services.xserver = { xkb.layout = "us"; xkb.variant = "dvorak"; };
-  console.useXkbConfig = true;
+  ## Set the keyboard layout
+  #services.xserver = { xkb.layout = "us"; xkb.variant = "dvorak"; };
+  #console.useXkbConfig = true;
 
-  # Enable CUPS to print documents.  services.printing.enable = true;
+  #services.xremap = {
+  #    withX11 = true;
+  #    userName = "jay";
+  #    yamlConfig = '' 
+  #  	modmap:
+  #  		- name: main remaps;
+  #  		  remap: 
+  #  			CapsLock: CONTROL_L;
+  #    '';
+  #};
+
+  #Enable CUPS to print documents.  services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true; 
