@@ -114,6 +114,10 @@ systemd.user.services.mpris-proxy = {
     ]; 
   };
 
+hardware.uinput.enable = true;
+users.groups.uinput.members = [ "jay" ];
+users.groups.input.members = [ "jay" ];
+
 programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run: $ nix search

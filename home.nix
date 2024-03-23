@@ -1,6 +1,9 @@
 {config, pkgs, ... }:
 
 {
+  imports = [
+	inputs.xremap-flake.homeManagerModules.default
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jay";
@@ -17,6 +20,16 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+
+  services.xremap = {
+	  withX11 = true;
+	  config = {
+		modmap = [
+			name = "global capslock to ctrl";
+			remap = { "CapsLock" = "CTRL_L"; };
+		];
+	  };
+  };
 
   programs.zsh = {
     enable = true;
