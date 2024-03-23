@@ -23,15 +23,25 @@
 
   services.xremap = {
 	  withX11 = true;
-	  yamlConfig = '' 
-		modmap:
-			- name: CapsLock to CTRL/Esc
-				remap:
-					CapsLock:
-						held: CTRL_L
-						alone: Esc
-						alone_timeout: 500
-	  '';
+	  #yamlConfig = '' 
+	  #  modmap:
+	  #    - name: CapsLock to RightCtrl/Esc;
+	  #  	remap:
+	  #  	  CapsLock:
+	  #  		held: Ctrl_R;
+	  #  		alone: Esc;
+	  #  		alone_timeout: 500;
+	  #'';
+	  config = {
+	      modmap = [
+	    	{
+	    		name = "Capslock to Ctrl";
+				remap = {
+					"CapsLock" = "CTRL_L";
+				};
+	    	}
+	      ];
+	  };
   };
 
   programs.zsh = {
