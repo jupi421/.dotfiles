@@ -1,4 +1,4 @@
-{config, pkgs, ... }:
+{config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -23,12 +23,15 @@
 
   services.xremap = {
 	  withX11 = true;
-	  config = {
-		modmap = [
-			name = "global capslock to ctrl";
-			remap = { "CapsLock" = "CTRL_L"; };
-		];
-	  };
+	  yamlConfig = '' 
+		modmap:
+			- name: CapsLock to CTRL/Esc
+				remap:
+					CapsLock:
+						held: CTRL_L
+						alone: Esc
+						alone_timeout: 500
+	  '';
   };
 
   programs.zsh = {
