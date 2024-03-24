@@ -47,7 +47,7 @@ return {
 		-- Where to put new notes. Valid options are
 		--  * "current_dir" - put new notes in same directory as the current buffer.
 		--  * "notes_subdir" - put new notes in the default notes subdirectory.
-		new_notes_location = "notes_subdir",
+		new_notes_location = "current_dir",
 
 
 		-- Either 'wiki' or 'markdown'.
@@ -116,13 +116,4 @@ return {
 		},
 	},
 
---	config = function ()
---		vim.keymap.set("n", "<leader>on", function ()
---			local noteName = vim.fn.input("Note Name > ")
---			vim.cmd('ObsidianNew ' .. noteName)
---		end, {noremap = true, silent = true})
---	--	vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>")
---	--	vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLink<CR>")
---	end
---
 }

@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>on", function ()
 	vim.cmd('ObsidianNew ' .. noteName)
 end, {noremap = true, silent = true})
 
-vim.keymap.set("n", "<leader>on", function ()
+vim.keymap.set("n", "<leader>ot", function ()
 	local templateName = vim.fn.input("Template Name > ")
 	vim.cmd('ObsidianTemplate' .. noteName)
 end, {noremap = true, silent = true})
