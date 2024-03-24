@@ -367,9 +367,9 @@ def autostart():
 
 @hook.subscribe.client_new
 def client_to_workspace(client):
-    if client.name == terminal:
-        client.togroup("1", switch_group = True)
-    elif client.name == 'Mozilla Firefox':
+    #if client.name == terminal:
+    #    client.togroup("1", switch_group = True)
+    if client.name == 'Mozilla Firefox':
         client.togroup("2", switch_group = True)
     elif client.name == 'obsidian':
         client.togroup("3", switch_group = True)
