@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-	imports = [
-		#../wild_packages/sesh.nix
-	];
-
 	programs.tmux = {
 		enable = true;
 		shell = "${pkgs.zsh}/bin/zsh";
@@ -29,9 +25,9 @@
 			bind -n M-L next-window
 
 			# bar config
-			set -g status-right "#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y %l:%M %p"
-			set -g status-justify left-length 200
-			set -g status-justify right-length 200
+			#set -g status-right "#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y %l:%M %p"
+			#set -g status-justify left-length 200
+			#set -g status-justify right-length 200
 			set -g status-position top
 			set -g status-style 'bg=#1e1e2e'
 			
