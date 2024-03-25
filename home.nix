@@ -44,7 +44,7 @@
 	      ];
 	  };
   };
-
+  
   programs.zsh = {
     enable = true;
   };
@@ -63,7 +63,7 @@
 	dunst
 	eww
 	fd
-	fzf
+
 	firefox
 	flameshot
 	htop

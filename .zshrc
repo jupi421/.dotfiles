@@ -26,6 +26,7 @@ alias l="ls --color=auto -l"
 alias la="ls --color=auto -la"
 alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
 alias hms="home-manager switch --flake ~jay/.dotfiles"
+alias tn="tmux-new"
 
 export FZF_DEFAULT_COMMAND="fd"
 #export FZF_DEFAULT_COMMAND="fd --hidden . $HOME"  # include dotfiles in search
@@ -44,6 +45,11 @@ if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/completion.zsh"
 fi
 source /usr/share/autojump/autojump.zsh 2>/dev/null
+
+tmux-new() {
+    session=$(sesh list | fzf)
+    sesh connect "$session"
+}
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

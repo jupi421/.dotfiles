@@ -12,7 +12,7 @@ sesh = pkgs.buildGoModule rec {
 			sha256 = "sha256-vV1b0YhDBt/dJJCrxvVV/FIuOIleTg4mI496n4/Y/Hk="; # Replace with the actual sha256
 		};
 
-	vendorSha256 = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
+	vendorHash = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
 
 };
 in {
@@ -31,8 +31,8 @@ in {
 				set -g @catppuccin_date_time "%H:%M"
 				'';
 		}
-		tmuxPlugins.sensible
-			tmuxPlugins.yank
+		#tmuxPlugins.sensible
+		#	tmuxPlugins.yank
 
 		];
 		extraConfig = '' 
@@ -44,14 +44,12 @@ in {
 			bind -n M-L next-window
 
 			# bar config
-			set -g status-right "#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y %l:%M %p"
-			set -g status-justify left-length 200
-			set -g status-justify right-length 200
+			set -g status-right "#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y  %l:%M %p"
 			set -g status-position top
 			set -g status-style 'bg=#1e1e2e'
 
-			set -g window-status-current-format '#[fg=magenta, bg=#1e1e2e] *#I #W'
-			set -g window-status-format '#[fg=grey, bg=#1e1e2e] #I #W'
+			set -g window-status-current-format '#[fg=magenta, bg=#1e1e2e] #I: #W'
+			set -g window-status-format '#[fg=grey, bg=#1e1e2e] #I: #W'
 			set -g window-status-last-style 'fg=white, bg=black'
 
 			# window indexing from 1
