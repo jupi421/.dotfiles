@@ -70,6 +70,7 @@
 	kitty
 	obsidian
 	picom
+	qalculate-gtk
 	qtile
 	ripgrep
 	rofi
