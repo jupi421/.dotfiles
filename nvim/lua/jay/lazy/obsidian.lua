@@ -19,7 +19,7 @@ return {
 		dir = "~/Documents/Notes/",
 
 		-- Optional, if you keep notes in a specific subdirectory of your vault.
-		notes_subdir = "LectureNotes",
+		--notes_subdir = "LectureNotes",
 
 		-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
 		completion = {

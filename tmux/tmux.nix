@@ -23,17 +23,16 @@ in {
 		prefix = "C-Space";
 		mouse = true;
 		plugins = with pkgs; [
-		{
-			plugin = tmuxPlugins.catppuccin;
-			extraConfig = '' 
-				set -g @catppuccin_flavor 'mocha'
-				set -g @catppuccin_window_tabs_enabled on
-				set -g @catppuccin_date_time "%H:%M"
-				'';
-		}
-		#tmuxPlugins.sensible
-		#	tmuxPlugins.yank
-
+			{
+				plugin = tmuxPlugins.catppuccin;
+				extraConfig = '' 
+					set -g @catppuccin_flavor 'mocha'
+					set -g @catppuccin_window_tabs_enabled on
+					set -g @catppuccin_date_time "%H:%M"
+					'';
+			}
+			tmuxPlugins.sensible
+			tmuxPlugins.yank
 		];
 		extraConfig = '' 
 			bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt
@@ -43,8 +42,15 @@ in {
 			bind -n M-H previous-window
 			bind -n M-L next-window
 
+			# vim-like pane switching
+			bind -r ^ last-window
+			bind -r k select-pane -U
+			bind -r j select-pane -D
+			bind -r h select-pane -L
+			bind -r l select-pane -R
+
 			# bar config
-			set -g status-right "#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y  %l:%M %p"
+			set -g status-right '#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y  %H:%M#[default]'
 			set -g status-position top
 			set -g status-style 'bg=#1e1e2e'
 

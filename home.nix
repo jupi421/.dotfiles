@@ -66,6 +66,7 @@
 
 	firefox
 	flameshot
+	fzf
 	htop
 	kitty
 	obsidian

@@ -21,7 +21,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey jj vi-cmd-mode
 
 # aliases
-alias v="nvim"
+alias v="steam-run nvim"
 alias l="ls --color=auto -l"
 alias la="ls --color=auto -la"
 alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
@@ -50,6 +50,8 @@ tmux-new() {
     session=$(sesh list | fzf)
     sesh connect "$session"
 }
+
+stty -ixon
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
