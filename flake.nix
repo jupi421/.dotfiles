@@ -6,6 +6,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 	xremap-flake.url = "github:xremap/nix-flake";
+#	tmux-sessionx.url = "github:omerxx/tmux-sessionx";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 

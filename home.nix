@@ -63,6 +63,7 @@
 	dunst
 	eww
 	fd
+#	inputs.tmux-sessionx.packages.x86_64-linux.default
 
 	firefox
 	flameshot

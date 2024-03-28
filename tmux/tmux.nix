@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 let
 sesh = pkgs.buildGoModule rec {
@@ -15,10 +15,11 @@ sesh = pkgs.buildGoModule rec {
 	vendorHash = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
 
 };
-resurrectDirPath = "/home/jay/.dotfiles/tmux/resurrect/";
-usr="user";
 in {
-	home.packages = [ sesh ];
+	home.packages = [
+		sesh
+		#inputs.tmux-sessionx.packages.x86_64-linux.default
+	];
 	programs.tmux = {
 		enable = true;
 		shell = "${pkgs.zsh}/bin/zsh";
@@ -37,13 +38,14 @@ in {
 				plugin = tmuxPlugins.resurrect;
 				extraConfig = ''
 					resurrect_dir="$HOME/.dotfiles/tmux/resurrect"
-
-					set -g @resurrect-hook-post-save-all "sh /home/jay/.dotfiles/tmux/save_session.sh"
+					set -g @resurrect-dir $resurrect_dir
+					set -g @resurrect-capture-pane-contents 'on'
+					set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
+					set -g @resurrect-processes '"~nvim"'
 				'';
 			}
 			tmuxPlugins.sensible
 			tmuxPlugins.yank
-			tmuxPlugins.vim-tmux-navigator
 		];
 		extraConfig = '' 
 			bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt
@@ -52,6 +54,13 @@ in {
 			# navigation between windows
 			bind -n M-H previous-window
 			bind -n M-L next-window
+
+			# vim-like pane switching
+			bind -r ^ last-window
+			bind -r k select-pane -U
+			bind -r j select-pane -D
+			bind -r h select-pane -L
+			bind -r l select-pane -R
 
 			# bar config
 			set -g status-right '#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y  %H:%M#[default]'
