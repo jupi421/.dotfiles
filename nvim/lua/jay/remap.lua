@@ -44,3 +44,5 @@ vim.keymap.set("n", "+", "<cmd>vertical resize +5<CR>")
 vim.keymap.set("n", "_", "<cmd>vertical resize -5<CR>")
 vim.keymap.set("n", "<C-=>", "<cmd>resize -5<CR>")
 vim.keymap.set("n", "<C-->", "<cmd>resize +5<CR>")
+--zenmode
+vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>")

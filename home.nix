@@ -94,6 +94,7 @@
 	xournalpp
 	zoxide
 	zsh
+	zathura
 
 	# fonts
 	iosevka

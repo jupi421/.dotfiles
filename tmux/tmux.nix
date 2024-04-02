@@ -61,6 +61,11 @@ in {
 			bind -r j select-pane -D
 			bind -r h select-pane -L
 			bind -r l select-pane -R
+			
+			# rename windows to current directory
+			set-option -g status-interval 5
+			set-option -g automatic-rename on
+			set-option -g automatic-rename-format '#{b:pane_current_path}'
 
 			# bar config
 			set -g status-right '#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y  %H:%M#[default]'
