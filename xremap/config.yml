@@ -1,7 +1,6 @@
 modmap:
-  - name: CapsLock to RightCtrl/Esc
-    remap:
-      CapsLock:
-        held: Ctrl_R
-        alone: Esc
-        alone_timeout: 500
+  remap:
+    CapsLock:
+      held: Ctrl_R
+      alone: Esc
+      alone_timeout_millis: 500

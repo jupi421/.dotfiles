@@ -4,6 +4,7 @@
   imports = [
 	inputs.xremap-flake.homeManagerModules.default
 	./tmux/tmux.nix
+	./nvim/nvim.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -24,22 +25,22 @@
 
   services.xremap = {
 	  withX11 = true;
-	  #yamlConfig = '' 
+	  #yamlConfig = ''
 	  #  modmap:
-	  #    - name: CapsLock to RightCtrl/Esc;
-	  #  	remap:
+	  #    - name: Global
+	  #      remap:
 	  #  	  CapsLock:
-	  #  		held: Ctrl_R;
-	  #  		alone: Esc;
-	  #  		alone_timeout: 500;
+	  #  	    held: CTRL_L
+	  #  		alone: Esc
+	  #  		alone_timeout_millis: 500
 	  #'';
 	  config = {
 	      modmap = [
 	    	{
 	    		name = "Capslock to Ctrl";
-				remap = {
-					"CapsLock" = "CTRL_L";
-				};
+	    		remap = {
+	    			"CapsLock" = "CTRL_L";
+	    		};
 	    	}
 	      ];
 	  };
@@ -108,7 +109,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim;
+   # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim;
 	".config/qtile".source = ./qtile;
 	".config/picom".source = ./picom;
 	".config/eww".source = ./eww;
