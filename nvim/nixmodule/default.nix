@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+	imports = [
+		./colorscheme.nix
+	];
+
 	programs.neovim = {
 		enable = true;
 		defaultEditor = true;
@@ -9,9 +13,8 @@
 		vimdiffAlias = true;
 		plugins = with pkgs.vimPlugins; [
 			nvim-treesitter.withAllGrammars
-			planary.nvim
+			plenary-nvim
 			nvim-autopairs
-			catppuccin-nvim
 			harpoon2
 			indent-blankline-nvim
 			lsp-zero-nvim
@@ -26,6 +29,6 @@
 			vimtex
 			wrapping-nvim
 			zen-mode-nvim
-		]
-
+		];
+	};
 }
