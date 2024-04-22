@@ -4,7 +4,7 @@
   imports = [
 	inputs.xremap-flake.homeManagerModules.default
 	./tmux/tmux.nix
-	# ./nvim/default.nix
+	./nvim/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -69,6 +69,7 @@
 	firefox
 	flameshot
 	fzf
+	feh
 	htop
 	kitty
 	obsidian
@@ -95,7 +96,7 @@
 	zoxide
 	zsh
 	zathura
-	neovim
+	#neovim
 
 	# fonts
 	iosevka
@@ -109,7 +110,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-  	".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim/nvim;
+  	#".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim/nvim;
 	".config/qtile".source = ./qtile;
 	".config/picom".source = ./picom;
 	".config/eww".source = ./eww;
