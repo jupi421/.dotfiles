@@ -7,8 +7,10 @@
 		./harpoon.nix
 		./ibl.nix
 		./lualine.nix
+		./jupytext.nix
 		./luasnip.nix
-		./lsp
+		./lsp.nix
+		./molten.nix
 		./neogen.nix
 		./surround.nix
 		./telescope.nix
@@ -17,6 +19,8 @@
 		./undo.nix
 		./vimtex.nix
 		./wrapping.nix
+		./opts.nix
+		./quarto.nix
 		./remap.nix
 	];
 	

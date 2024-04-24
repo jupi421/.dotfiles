@@ -11,6 +11,12 @@
 		plugins = with pkgs.vimPlugins; [
 			nvim-lspconfig
 			lsp-zero-nvim
+			nvim-cmp
+			cmp-nvim-lsp
+			cmp-buffer
+			cmp-path
+			cmp_luasnip
+			cmp-nvim-lua
 		];
 		extraLuaConfig = /* lua */ ''
 			local lsp_zero = require('lsp-zero')
@@ -30,8 +36,27 @@
 				-- vim.keymap.set("i", "<leader>vsh", function() vim.lsp.buf.signature_help() end, opts)
 			end)
 
-			lsp_zero.setup_server({'pyright', 'clangd'})
-				
+			lsp_zero.setup_servers({'clangd'})
+
+			require("lspconfig")["pyright"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				settings = {
+					python = {
+						analysis = {
+							diagnosticSeverityOverrides = {
+								reportUnusedExpression = "none",
+							},
+						},
+					},
+				},
+			})
+								
+			local cmp = require('cmp')
+			local cmp_select = {behavior = cmp.SelectBehavior.Select}
+
+			require('luasnip.loaders.from_vscode').lazy_load()
+
 			cmp.setup({
 				sources = {
 					{name = 'path'},
