@@ -202,7 +202,7 @@
 (defwindow bar
 	:geometry (geometry :x "5" 
 						:y "8" 
-						:height "99%" 
+						:height "1184" 
 						:width "47px")
 	:monitor 0
 	:reserve (struts :distance "50px" 
