@@ -41,7 +41,7 @@
   services.xserver.enable = true;
   services.xserver.windowManager.qtile.enable = true;
   # Configure LightDM for auto-login
-  services.xserver.displayManager = {
+  services.displayManager = {
     enable = true;
     autoLogin = {
       enable = true;
