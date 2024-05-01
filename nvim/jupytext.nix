@@ -2,13 +2,16 @@
 
 {
 	home.packages = with pkgs; [
-		python311Packages.jupytext
+		python3Packages.jupytext
 	]; 
 
 	programs.neovim = {
 		plugins = with pkgs.vimPlugins; [
 			jupytext-nvim
 		];
+        #extraPython3Packages = ps: with ps; [
+		#	jupytext
+		#];
 		extraLuaConfig = /* lua */ ''
 			require("jupytext").setup({
 				style = "markdown",

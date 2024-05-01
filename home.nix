@@ -80,7 +80,6 @@
 	rofi
 	sassc
 	starship
-	steam-run
 	spotify
 	teams-for-linux
 	telegram-desktop
@@ -96,7 +95,8 @@
 	zoxide
 	zsh
 	zathura
-	#neovim
+	
+	chromium
 
 	# fonts
 	iosevka

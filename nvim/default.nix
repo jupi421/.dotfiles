@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{config, pkgs, ... }:
 
 {
 	imports = [
@@ -12,6 +12,7 @@
 		./lsp.nix
 		./molten.nix
 		./neogen.nix
+		./obsidian.nix
 		./surround.nix
 		./telescope.nix
 		./trouble.nix
@@ -19,6 +20,7 @@
 		./undo.nix
 		./vimtex.nix
 		./wrapping.nix
+		./zenmode.nix
 		./opts.nix
 		./quarto.nix
 		./remap.nix

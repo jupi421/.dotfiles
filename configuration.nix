@@ -41,7 +41,7 @@
   services.xserver.enable = true;
   services.xserver.windowManager.qtile.enable = true;
   # Configure LightDM for auto-login
-  services.xserver.displayManager.lightdm = {
+  services.xserver.displayManager = {
     enable = true;
     autoLogin = {
       enable = true;
@@ -69,6 +69,21 @@
     	 turbo = "auto";
     };
   };
+
+ # services.syncthing = {
+ #   enable = true;
+ #   user = "jay";
+ #   dataDir = "/home/jay/Documents/";
+ #   configDir =	"/home/jay/Documents/.config/syncthing";
+ #   overridesDevices = true;
+ #   overridesFolders = true;
+ #   settings = {
+ #     devices = {
+ #   	"laptop" = { id = "DEDHYGC-PRZIE3R-OWAESOX-WHQG5ZJ-XURTP4W-OTH5UL4-GJMAKOI-RU3IHQ2" };
+ #   	"pc" = { id = ""}
+ #     };
+ #   };
+ # };
 
 
   # Configure keymap in X11 services.xserver.xkb.layout = "us";
