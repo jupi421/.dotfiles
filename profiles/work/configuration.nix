@@ -73,20 +73,6 @@
     user = "jay";
     dataDir = "/home/jay/Documents/";
     configDir =	"/home/jay/Documents/.config/syncthing";
-    overrideDevices = true;
-    overrideFolders = true;
-    settings = {
-      devices = {
-    	"laptop" = { id = "DEDHYGC-PRZIE3R-OWAESOX-WHQG5ZJ-XURTP4W-OTH5UL4-GJMAKOI-RU3IHQ2"; };
-    	"pc" = { id = "5SOWCJX-Y4Q22HU-3FAUODH-NFUFAJB-Q2CYEJC-OTQMU4P-CLKH6KM-SPMQXQX"; };
-      };
-	  folders = {
-	    "Documents" = {
-		  path = "/home/jay/Documents";
-		  devices = [ "laptop" "pc" ];
-	    };
-	  };
-    };
   };
 
 
