@@ -3,8 +3,8 @@
 {
   imports = [
 	inputs.xremap-flake.homeManagerModules.default
-	./tmux/tmux.nix
-	./nvim/default.nix
+	./programs/tmux/tmux.nix
+	./programs/nvim/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -111,14 +111,14 @@
   # plain files is through 'home.file'.
   home.file = {
   	#".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim/nvim;
-	".config/qtile".source = ./qtile;
-	".config/picom".source = ./picom;
-	".config/eww".source = ./eww;
-	".config/kitty".source = ./kitty;
-	".config/dunst".source = ./dunst;
-	".config/rofi".source = ./rofi;
-	".config/zathura".source = ./zathura;
-	".zshrc".source = ./.zshrc;
+	".config/qtile".source = .programs/qtile;
+	".config/picom".source = .programs/picom;
+	".config/eww".source = .programs/eww;
+	".config/kitty".source = .programs/kitty;
+	".config/dunst".source = .programs/dunst;
+	".config/rofi".source = .programs/rofi;
+	".config/zathura".source = .programs/zathura;
+	".zshrc".source = programs/.zshrc;
   };
 
   # Home Manager can also manage your environment variables through
