@@ -1,5 +1,5 @@
 *.log
-eww/*
+programs/eww/*
 tmux/resurrect/*.txt
 tmux/resurrect/last
 tmux/resurrect/*.tar.gz
