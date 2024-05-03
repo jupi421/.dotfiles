@@ -9,7 +9,6 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-	  ./suspend_then_hibernate.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -40,7 +39,7 @@
   services.xserver.enable = true;
   services.xserver.windowManager.qtile.enable = true;
   # Configure LightDM for auto-login
-  services.xserver.displayManager.lightdm = {
+  services.displayManager = {
     enable = true;
     autoLogin = {
       enable = true;

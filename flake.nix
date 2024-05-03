@@ -13,7 +13,7 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs { system = "x86_64-linux"; config = { allowUnfree = true; }; };
-	commonConfiguration = ./profiles/work/configuration.nix
+	commonConfiguration = ./profiles/work/configuration.nix;
   in {
     nixosConfigurations = {
       nixos-pc = lib.nixosSystem {
@@ -28,6 +28,7 @@
         modules = [
 		  commonConfiguration
 		  ./hardware/hardware-configuration-laptop.nix
+		  ./suspend-then-hibernate.nix
 		];
       };
     };
