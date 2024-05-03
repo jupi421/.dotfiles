@@ -10,7 +10,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-	  ./suspend_then_hibernate-pc.nix
+	  ./suspend_then_hibernate.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
