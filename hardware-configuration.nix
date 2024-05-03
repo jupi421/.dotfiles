@@ -1,0 +1,1 @@
+hardware_configs/hardware-configuration-pc.nix

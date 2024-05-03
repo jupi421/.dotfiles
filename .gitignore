@@ -1,6 +1,5 @@
 *.log
 eww/*
-hardware-configuration.nix
 tmux/resurrect/*.txt
 tmux/resurrect/last
 tmux/resurrect/*.tar.gz
