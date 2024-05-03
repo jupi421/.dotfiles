@@ -6,6 +6,6 @@
   ];
 
   home.file = {
-	".config/eww".source = ./eww_laptop;
+	".config/eww".source = ../../programs/eww/eww_laptop;
   };
 }

@@ -6,6 +6,6 @@
   ];
 
   home.file = {
-	".config/eww".source = ../../programs/eww_pc;
+	".config/eww".source = ../../programs/eww/eww_pc;
   };
 }
