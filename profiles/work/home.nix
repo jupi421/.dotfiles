@@ -62,7 +62,6 @@
     brightnessctl
 	dmenu
 	dunst
-	eww
 	fd
 #	inputs.tmux-sessionx.packages.x86_64-linux.default
 
@@ -113,7 +112,6 @@
   	#".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim/nvim;
 	".config/qtile".source = ../../programs/qtile;
 	".config/picom".source = ../../programs/picom;
-	".config/eww".source = ../../programs/eww;
 	".config/kitty".source = ../../programs/kitty;
 	".config/dunst".source = ../../programs/dunst;
 	".config/rofi".source = ../../programs/rofi;

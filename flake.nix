@@ -33,10 +33,21 @@
       };
     };
     homeConfigurations = {
-      jay = home-manager.lib.homeManagerConfiguration {
+      jay-laptop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 		extraSpecialArgs = { inherit inputs; };
-		modules = [ ./profiles/work/home.nix ];
+		modules = [ 
+		  ./profiles/work/home.nix 
+		  ./programs/eww/eww-laptop.nix
+		];
+      };
+      jay-pc = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+		extraSpecialArgs = { inherit inputs; };
+		modules = [ 
+		  ./profiles/work/home.nix 
+		  ./programs/eww/eww-pc.nix
+		];
       };
     };
   };
