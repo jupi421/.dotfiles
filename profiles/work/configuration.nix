@@ -70,17 +70,23 @@
 
   services.syncthing = {
     enable = true;
- #   user = "jay";
- #   dataDir = "/home/jay/Documents/";
- #   configDir =	"/home/jay/Documents/.config/syncthing";
- #   overridesDevices = true;
- #   overridesFolders = true;
- #   settings = {
- #     devices = {
- #   	"laptop" = { id = "DEDHYGC-PRZIE3R-OWAESOX-WHQG5ZJ-XURTP4W-OTH5UL4-GJMAKOI-RU3IHQ2" };
- #   	"pc" = { id = ""}
- #     };
- #   };
+    user = "jay";
+    dataDir = "/home/jay/Documents/";
+    configDir =	"/home/jay/Documents/.config/syncthing";
+    overridesDevices = true;
+    overridesFolders = true;
+    settings = {
+      devices = {
+    	"laptop" = { id = "DEDHYGC-PRZIE3R-OWAESOX-WHQG5ZJ-XURTP4W-OTH5UL4-GJMAKOI-RU3IHQ2"; };
+    	"pc" = { id = "5SOWCJX-Y4Q22HU-3FAUODH-NFUFAJB-Q2CYEJC-OTQMU4P-CLKH6KM-SPMQXQX"};
+      };
+	  folders = {
+	    "Documents" = {
+		  path = "/home/jay/Documents";
+		  devices = [ "laptop" "pc" ];
+	    };
+	  };
+    };
   };
 
 
@@ -167,10 +173,10 @@ programs.zsh.enable = true;
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  #networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
