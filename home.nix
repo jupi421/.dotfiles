@@ -80,6 +80,7 @@
 	rofi
 	sassc
 	starship
+	syncthing
 	spotify
 	teams-for-linux
 	telegram-desktop
