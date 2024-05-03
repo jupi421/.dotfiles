@@ -10,7 +10,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-	  ./suspend_then_hibernate.nix
+	  ./suspend_then_hibernate-pc.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -70,8 +70,8 @@
     };
   };
 
- # services.syncthing = {
- #   enable = true;
+  services.syncthing = {
+    enable = true;
  #   user = "jay";
  #   dataDir = "/home/jay/Documents/";
  #   configDir =	"/home/jay/Documents/.config/syncthing";
@@ -83,7 +83,7 @@
  #   	"pc" = { id = ""}
  #     };
  #   };
- # };
+  };
 
 
   # Configure keymap in X11 services.xserver.xkb.layout = "us";
