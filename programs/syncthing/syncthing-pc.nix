@@ -5,12 +5,12 @@
 		enable = true;
 		user = "jay";
 		dataDir = "/home/jay/Documents/";
-		configDir =	"/home/jay/Documents/.config/syncthing";
+		configDir =	"/home/jay/.config/syncthing";
 		overrideDevices = true;
 		overrideFolders = true;
 		settings = {
 			devices = {
-				"laptop" = { id = "6EN6E67-AGBMW6R-LY22E3N-ET3GZD7-TQMLMUA-E2EG6L5-5YJW7G4-V5MN5Q5"; };
+				"laptop" = { id = "ZGZ5OKM-VLQE6IZ-U7SRJ3H-HY26IM4-BDLGPLA-DIQ3535-3RYE7MK-VVGZIQ4"; };
 			};
 			folders = {
 				"Documents" = {
