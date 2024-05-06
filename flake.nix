@@ -29,6 +29,7 @@
 				modules = [
 					commonConfiguration
 					./hardware/hardware-configuration-laptop.nix
+					./programs/syncthing/syncthing-laptop.nix
 					./suspend-then-hibernate.nix
 				];
 			};

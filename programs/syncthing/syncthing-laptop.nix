@@ -5,7 +5,7 @@
 		enable = true;
 		user = "jay";
 		dataDir = "/home/jay/Documents/";
-		configDir =	"/home/jay/Documents/.config/syncthing";
+		configDir =	"/home/jay/.config/syncthing";
 		overrideDevices = true;
 		overrideFolders = true;
 		settings = {
@@ -15,7 +15,7 @@
 			folders = {
 				"Documents" = {
 					path = "/home/jay/Documents";
-					devices = [ "laptop" ];
+					devices = [ "pc" ];
 				};
 			};
 		};

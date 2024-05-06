@@ -10,7 +10,7 @@
 		overrideFolders = true;
 		settings = {
 			devices = {
-				"laptop" = { id = "ZGZ5OKM-VLQE6IZ-U7SRJ3H-HY26IM4-BDLGPLA-DIQ3535-3RYE7MK-VVGZIQ4"; };
+				"laptop" = { id = "OQI6ZK4-HN5NVQF-BHCLEB3-ZZ6GLV6-HH3CL4B-CJF76LJ-GDHUP6Y-KSJQHQ2"; };
 			};
 			folders = {
 				"Documents" = {
