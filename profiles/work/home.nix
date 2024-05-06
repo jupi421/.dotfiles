@@ -69,6 +69,7 @@
 	flameshot
 	fzf
 	feh
+	gdb
 	htop
 	kitty
 	obsidian
