@@ -16,6 +16,14 @@
 				"Documents" = {
 					path = "/home/jay/Documents";
 					devices = [ "laptop" ];
+					versioning = {
+						type = "staggered";
+						fsPath = "/home/jay/.Documents_backup/";
+						params = {
+							cleanInterval = "3600";
+							maxAge = "15552000";
+						};
+					};
 				};
 			};
 		};
