@@ -62,14 +62,6 @@
 		};
 	};
 
-	services.syncthing = {
-		enable = true;
-		user = "jay";
-		dataDir = "/home/jay/Documents/";
-		configDir =	"/home/jay/Documents/.config/syncthing";
-	};
-
-
 # Configure keymap in X11 services.xserver.xkb.layout = "us";
 # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
