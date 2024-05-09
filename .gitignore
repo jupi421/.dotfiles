@@ -3,3 +3,4 @@ tmux/resurrect/*.txt
 tmux/resurrect/last
 tmux/resurrect/*.tar.gz
 standalone/*
+programs/bigip/BIGIPLinuxClient	
