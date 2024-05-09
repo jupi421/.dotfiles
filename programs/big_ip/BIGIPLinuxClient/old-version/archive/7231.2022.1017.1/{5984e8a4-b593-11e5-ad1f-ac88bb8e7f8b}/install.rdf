@@ -1,0 +1,16 @@
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>{5984e8a4-b593-11e5-ad1f-ac88bb8e7f8b}</em:id>
+    <em:name>F5 Network Access plugin</em:name>
+    <em:version>7135.2016.429.1</em:version>
+    <em:creator>F5 Networks</em:creator>
+    <em:unpack>true</em:unpack>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>1.5</em:minVersion>
+        <em:maxVersion>*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

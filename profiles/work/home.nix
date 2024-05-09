@@ -80,6 +80,7 @@
 	rofi
 	sassc
 	starship
+	steam-run
 	spotify
 	teams-for-linux
 	telegram-desktop

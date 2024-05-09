@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+
+Name: install.rdf
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: opJSj3Fm0DZ09ae64y2ZrQ==
+SHA1-Digest: +lvK2k0JdXn0RoUBy4HnvJKbxHk=
+
+Name: plugins/np_F5_SSL_VPN_i386.so
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 0R+qNKvuunfEjW4k+usUfw==
+SHA1-Digest: ma8cW4PaWLTb4ubLlRcvSvxHrd8=
+
+Name: plugins/np_F5_SSL_VPN_x86_64.so
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: saQKMryPxSKnplmMdjkGvw==
+SHA1-Digest: 2y16rff8gUqw9AYiIxfIn5ejE88=
+
