@@ -78,10 +78,20 @@
 		package = pkgs.pulseaudioFull;
 	};
 
-	hardware.bluetooth.enable = true;
-	hardware.bluetooth.powerOnBoot = false;
-	services.blueman.enable = true;
-
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Name = "jay-laptop";
+        ControllerMode = "dual";
+        FastConnectable = "true";
+        Experimental = "true";
+      };
+      Policy = {
+        AutoEnable = "true";
+      };
+    };
+  };
 
 
 # Enable touchpad support (enabled default in most desktopManager).

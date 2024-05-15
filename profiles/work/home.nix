@@ -22,7 +22,21 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Name = "jay-laptop";
+        ControllerMode = "dual";
+        FastConnectable = "true";
+        Experimental = "true";
+      };
+      Policy = {
+        AutoEnable = "true";
+      };
+    };
+  };
+   
   services.xremap = {
 	  withX11 = true;
 	  #yamlConfig = ''
