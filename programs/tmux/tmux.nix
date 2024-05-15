@@ -68,7 +68,7 @@ in {
 			set-option -g automatic-rename-format '#{b:pane_current_path}'
 
 			# bar config
-			set -g status-right '#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y  %H:%M#[default]'
+			set -g status-right '#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y   %H:%M#[default]'
 			set -g status-position top
 			set -g status-style 'bg=#1e1e2e'
 
