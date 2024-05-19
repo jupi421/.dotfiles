@@ -88,7 +88,7 @@
         Experimental = "true";
       };
       Policy = {
-        AutoEnable = "true";
+        AutoEnable = "false";
       };
     };
   };
