@@ -90,25 +90,21 @@
 	spotify
 	teams-for-linux
 	telegram-desktop
-	neofetch
 	nitrogen
 	notify
 	whatsapp-for-linux
 	webcord
 	wmctrl
 	xclip
-	xorg.xprop
 	xournalpp
 	zoxide
 	zsh
 	zathura
 	
-	chromium
-
 	# fonts
 	iosevka
-	terminus-nerdfont
 	nerdfonts
+	terminus-nerdfont
 	font-awesome
   ];
 

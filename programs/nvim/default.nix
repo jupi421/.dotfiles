@@ -10,7 +10,7 @@
 		./jupytext.nix
 		./luasnip.nix
 		./lsp.nix
-		./molten.nix
+		#./molten.nix
 		./neogen.nix
 		./obsidian.nix
 		./surround.nix
