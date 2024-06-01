@@ -28,7 +28,7 @@
 				sha256 = "sha256-f/rPURva1zx1hoqG3GZ/K3FvKtiLp+qz9Q6BeZBN0lY=";
 			};
 
-			buildInputs = with pkgs; [
+			nativeBuildInputs = with pkgs; [
 				cmake
 				cython
 				python3
