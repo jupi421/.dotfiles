@@ -90,6 +90,7 @@
 	spotify
 	teams-for-linux
 	telegram-desktop
+	tree
 	nitrogen
 	notify
 	whatsapp-for-linux
