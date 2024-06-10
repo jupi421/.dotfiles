@@ -34,10 +34,27 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1717786204,
+        "narHash": "sha256-4q0s6m0GUcN7q+Y2DqD27iLvbcd1G50T2lv08kKxkSI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "051f920625ab5aabe37c920346e3e69d7d34400e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "vasputil-flake": "vasputil-flake"
       }
     },
     "systems": {
@@ -53,6 +70,21 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "vasputil-flake": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1718013237,
+        "narHash": "sha256-9Hbi3pJfWR5hUaVTUHQ4/Gcc9eMIKQFAc1V+MUynCl4=",
+        "path": "/home/jay/.dotfiles/programs/extern/vasputil",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/jay/.dotfiles/programs/extern/vasputil",
+        "type": "path"
       }
     }
   },
