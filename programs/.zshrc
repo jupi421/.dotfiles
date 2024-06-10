@@ -24,7 +24,7 @@ bindkey jj vi-cmd-mode
 alias v="nvim"
 alias l="ls --color=auto -l"
 alias la="ls --color=auto -la"
-alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
+#alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
 alias hms="home-manager switch --flake ~jay/.dotfiles"
 alias tn="tmux-new"
 
@@ -42,7 +42,7 @@ export FZF_DEFAULT_OPTS=" \
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 if [ -n "${commands[fzf-share]}" ]; then
-  source "$(fzf-share)/key-bindings.zsh"
+  #source "$(fzf-share)/key-bindings.zsh"
   source "$(fzf-share)/completion.zsh"
 fi
 
