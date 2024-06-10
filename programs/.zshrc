@@ -28,10 +28,10 @@ alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_contr
 alias hms="home-manager switch --flake ~jay/.dotfiles"
 alias tn="tmux-new"
 
-export FZF_DEFAULT_COMMAND="fd"
-#export FZF_DEFAULT_COMMAND="fd --hidden . $HOME"  # include dotfiles in search
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+#export FZF_DEFAULT_COMMAND="fd"
+##export FZF_DEFAULT_COMMAND="fd --hidden . $HOME"  # include dotfiles in search
+#export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -40,10 +40,15 @@ export FZF_DEFAULT_OPTS=" \
 
 #load zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
 if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"
   source "$(fzf-share)/completion.zsh"
 fi
+
+bindkey '^t' fd --type d | fzf
+bindkey '^T' fd --type d --hidden . $HOME | fzf
+bindkey '^r' history / | fzf
 source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 tmux-new() {
