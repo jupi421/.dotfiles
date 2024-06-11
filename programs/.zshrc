@@ -46,9 +46,36 @@ if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/completion.zsh"
 fi
 
-bindkey '^t' fd --type d | fzf
-bindkey '^T' fd --type d --hidden . $HOME | fzf
-bindkey '^r' history / | fzf
+find-directories-widget() {
+	fd --type d | fzf
+}
+
+find-hidden-directories-widget() {
+	fd --type d --hidden | fzf
+}
+
+find-command-hist-widget() {
+local command=$(history / | fzf | awk '{for (i=2;i<NF;++i)print $i}') 
+}
+
+open-file-widget() {
+	local file=$(fd --type f | fzf)
+
+	if [[ -n $file ]]; then
+		nvim "$file"
+	fi
+}
+
+zle -N find-directories-widget
+zle -N find-hidden-directories-widget
+zle -N find-command-hist-widget
+zle -N open-file-widget
+
+bindkey '^t' find-directories-widget
+bindkey '^[c' find-hidden-directories-widget
+bindkey '^r' find-command-hist-widget
+bindkey '^o' open-file-widget
+
 source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 tmux-new() {
