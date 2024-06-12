@@ -24,6 +24,13 @@
 					./programs/syncthing/syncthing-pc.nix
 				];
 			};
+			office-pc = lib.nixosSystem {
+				inherit system; 
+				modules = [
+					commonConfiguration
+					./hardware/hardware-configuration-office.nix
+				];
+			};
 			laptop = lib.nixosSystem {
 				inherit system; 
 				modules = [
@@ -48,6 +55,14 @@
 				extraSpecialArgs = { inherit inputs; };
 				modules = [ 
 					./profiles/work/home.nix 
+					./programs/eww/eww-pc.nix
+				];
+			};
+			office-pc = home-manager.lib.homeManagerConfiguration {
+				inherit pkgs;
+				extraSpecialArgs = { inherit inputs; };
+				modules = [ 
+					./profiles/office/home.nix 
 					./programs/eww/eww-pc.nix
 				];
 			};
