@@ -14,7 +14,7 @@
 			vasputil-src = pkgs.fetchFromGitHub {
 				owner = "jabl";
 				repo = "vasputil";
-				rev = "6.1";
+				rev = "v6.1";
 				sha256 = "sha256-W7nDhzW9dUxgjHd1+1b3wEacg9AQnozBN1R423Xd6c8=";
 			};
 		in {

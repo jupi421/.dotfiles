@@ -79,7 +79,6 @@
 	gdb
 	htop
 	kitty
-	obsidian
 	picom
 	qalculate-gtk
 	qtile

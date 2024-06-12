@@ -48,6 +48,8 @@ in {
 			tmuxPlugins.yank
 		];
 		extraConfig = '' 
+			# prefix for nested session
+
 			bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt
 			set -g detach-on-destroy off  # don't exit from tmux when closing a session
 
