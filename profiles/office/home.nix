@@ -79,6 +79,7 @@
 	gdb
 	htop
 	kitty
+	tree
 	picom
 	qalculate-gtk
 	qtile
