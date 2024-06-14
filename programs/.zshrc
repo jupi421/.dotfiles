@@ -25,8 +25,8 @@ alias v="nvim"
 alias l="ls --color=auto -l"
 alias la="ls --color=auto -la"
 #alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
-alias hms="home-manager switch --flake ~jay/.dotfiles"
 alias tn="tmux-new"
+alias ts="tmux new -s"
 
 #export FZF_DEFAULT_COMMAND="fd"
 ##export FZF_DEFAULT_COMMAND="fd --hidden . $HOME"  # include dotfiles in search

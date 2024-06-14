@@ -77,6 +77,7 @@
 	fzf
 	feh
 	gdb
+	gnuplot
 	htop
 	kitty
 	obsidian
@@ -101,6 +102,7 @@
 	zoxide
 	zsh
 	zathura
+	zip
 	
 	# fonts
 	iosevka

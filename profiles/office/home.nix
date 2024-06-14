@@ -77,6 +77,7 @@
 	fzf
 	feh
 	gdb
+	gnuplot
 	htop
 	kitty
 	tree
@@ -96,6 +97,7 @@
 	zoxide
 	zsh
 	zathura
+	zip
 	
 	chromium
 
