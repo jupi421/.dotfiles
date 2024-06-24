@@ -106,10 +106,11 @@
 		serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
 	};
 
+	virtualisation.docker.enable = true;
 # Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.jay = {
 		isNormalUser = true; 
-		extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.  
+		extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.  
 			shell = pkgs.zsh;
 		packages = with pkgs; [
 		]; 
@@ -120,6 +121,7 @@
 	users.groups.input.members = [ "jay" ];
 
 	programs.zsh.enable = true;
+
 
 # List packages installed in system profile. To search, run: $ nix search
 # wget

@@ -83,7 +83,7 @@
 	obsidian
 	picom
 	qalculate-gtk
-	qtile
+	python311Packages.qtile
 	ripgrep
 	rofi
 	sassc
@@ -103,6 +103,7 @@
 	zsh
 	zathura
 	zip
+	zoom-us
 	
 	# fonts
 	iosevka

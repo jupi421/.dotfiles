@@ -15,7 +15,7 @@
 		./obsidian.nix
 		./surround.nix
 		./telescope.nix
-		./trouble.nix
+		#./trouble.nix
 		./treesitter.nix
 		./undo.nix
 		./vimtex.nix
