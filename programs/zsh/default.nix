@@ -20,6 +20,8 @@
 			bindkey -v
 			export KEYTIMEOUT=20
 
+			# Prevent recursive function call by checking keymap changes
+
 			# vim keys in drop down menu
 			bindkey -M menuselect 'h' vi-backward-char
 			bindkey -M menuselect 'k' vi-up-line-or-history
@@ -34,6 +36,16 @@
 			#alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
 			alias tn="tmux-new"
 			alias ts="tmux new -s"
+			alias fzf-custom="fzf --multi \
+				--height=50% \
+				--margin=5%,2%,2%,5% \
+				--layout=reverse-list \
+				--border=rounded \
+				--info=inline \
+				--prompt='>  ' \
+				--pointer='→' \
+				--marker='▶' \
+				--color='dark,fg:blue'"
 
 			export FZF_DEFAULT_OPTS=" \
 			--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -49,26 +61,39 @@
 
 			find-directories-widget() {
 				local dir
-				dir=$(fd --type d | fzf ) || return
+				dir=$(fd --type d | fzf-custom ) || {
+					zle reset-prompt
+					return
+				}
 				LBUFFER+="$dir"
+				zle reset-prompt
 			}
 
 			find-hidden-directories-widget() {
 				local dir
-				dir=$(fd --type d --hidden | fzf) || return
-				LBUFFER+="$dir"
+				dir=$(fd --type d --hidden | fzf-custom) || {
+					zle reset-prompt
+					return
+				}
+				LBUFFER+=" $dir"
+				zle reset-prompt
 			}
 
 			find-command-hist-widget() {
 				local command
-				command=$(history / | fzf | awk '{$1=""; print $0}') || return
+				command=$(history / | fzf-custom | awk '{$1=""; print $0}') || return
 				LBUFFER+="$command"
+				zle reset-prompt
 			}
 
 			find-file-widget() {
 				local file
-				file=$(fd --type f | fzf) || return
-				LBUFFER+="$file"
+				file=$(fd --type f | fzf-custom) || {
+					zle reset-prompt
+					return
+				}
+				LBUFFER+=" $file"
+				zle reset-prompt
 			}
 
 			zle -N find-directories-widget
@@ -77,20 +102,19 @@
 			zle -N find-file-widget
 
 			bindkey '^t' find-directories-widget
-			bindkey '^[c' find-hidden-directories-widget
+			bindkey '^h' find-hidden-directories-widget
 			bindkey '^r' find-command-hist-widget
 			bindkey '^f' find-file-widget
 
 			source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 			tmux-new() {
-				session=$(sesh list | fzf)
+				session=$(sesh list | fzf-custom)
 				sesh connect "$session"
 			}
 
 			stty -ixon
 
-			eval "$(starship init zsh)"
 			eval "$(zoxide init zsh)"
 			eval "$(direnv hook zsh)"
 		'';
