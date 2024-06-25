@@ -75,7 +75,7 @@
 					zle reset-prompt
 					return
 				}
-				LBUFFER+=" $dir"
+				LBUFFER+="$dir"
 				zle reset-prompt
 			}
 
@@ -92,7 +92,7 @@
 					zle reset-prompt
 					return
 				}
-				LBUFFER+=" $file"
+				LBUFFER+="$file"
 				zle reset-prompt
 			}
 
