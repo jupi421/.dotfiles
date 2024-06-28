@@ -75,44 +75,46 @@
 		dmenu
 		dunst
 		fd
+		feh
 		firefox
 		flameshot
+		fluent-reader
 		fzf
-		feh
 		gdb
 		gnuplot
 		htop
 		kitty
+		nitrogen
+		notify
 		obsidian
 		picom
-		qalculate-gtk
 		python311Packages.qtile
+		qalculate-gtk
 		ripgrep
 		rofi
 		sassc
-		starship
 		spotify
+		starship
 		teams-for-linux
 		telegram-desktop
 		tree
-		nitrogen
-		notify
-		whatsapp-for-linux
 		webcord
+		whatsapp-for-linux
 		wmctrl
 		xclip
 		xournalpp
-		zoxide
-		zsh
 		zathura
 		zip
 		zoom-us
+		zotero
+		zoxide
+		zsh
 
 # fonts
+		font-awesome
 		iosevka
 		nerdfonts
 		terminus-nerdfont
-		font-awesome
 	];
 
 	fonts.fontconfig.enable = true;

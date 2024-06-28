@@ -381,6 +381,8 @@ def client_to_workspace(client):
         client.togroup("5", switch_group = True)
     elif client.name == "webcord":
         client.togroup("6", switch_group = True)
+    elif client.name == 'Zotero':
+        client.togroup("9", switch_group = True)
 
 @hook.subscribe.client_name_updated
 def move_spotify_workaround(client):
