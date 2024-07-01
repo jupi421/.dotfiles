@@ -15,6 +15,8 @@
 				};
 				espressoMD = espressoMD-flake.packages.${system}.espressoMD;
 				pythonPkgs = pkgs.python3.withPackages (ps: with ps; [
+					graphx
+					numba
 					numpy
 					scipy
 					tqdm
