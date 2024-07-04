@@ -15,6 +15,7 @@
 				};
 				espressoMD = espressoMD-flake.packages.${system}.espressoMD;
 				pythonPkgs = pkgs.python3.withPackages (ps: with ps; [
+					numba
 					numpy
 					scipy
 					tqdm
@@ -26,6 +27,7 @@
 					buildInputs = [
 						espressoMD
 						pythonPkgs
+						pkgs.mpi
 					];
 
 					shellHook = ''
