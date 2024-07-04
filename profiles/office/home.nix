@@ -85,6 +85,7 @@
 	picom
 	qalculate-gtk
 	python311Packages.qtile
+	ovito
 	ripgrep
 	rofi
 	sassc

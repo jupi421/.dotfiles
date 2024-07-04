@@ -87,6 +87,7 @@
 		nitrogen
 		notify
 		obsidian
+		ovito
 		picom
 		python311Packages.qtile
 		qalculate-gtk
