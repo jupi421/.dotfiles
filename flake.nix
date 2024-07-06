@@ -22,6 +22,7 @@
 					commonConfiguration
 					./hardware/hardware-configuration-pc.nix
 					./programs/syncthing/syncthing-pc.nix
+					#./programs/qemu/qemu.nix
 				];
 			};
 			office-pc = lib.nixosSystem {

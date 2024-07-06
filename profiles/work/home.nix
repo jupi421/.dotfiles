@@ -4,8 +4,8 @@
 	imports = [
 		inputs.xremap-flake.homeManagerModules.default
 			../../programs/tmux/tmux.nix
-			../../programs/nvim/default.nix
-			../../programs/zsh/default.nix
+			../../programs/nvim/nvim.nix
+			../../programs/zsh/zsh.nix
 	];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
@@ -91,6 +91,7 @@
 		picom
 		python311Packages.qtile
 		qalculate-gtk
+		qemu
 		ripgrep
 		rofi
 		sassc
