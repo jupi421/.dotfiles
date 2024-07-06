@@ -18,7 +18,6 @@
 					matplotlib
 					numba
 					numpy
-					pyspark
 					scipy
 					tqdm
 				]);
@@ -28,6 +27,7 @@
 					buildInputs = [
 						espressoMD
 						pythonPkgs
+						pkgs.mpi
 					];
 
 					shellHook = ''
