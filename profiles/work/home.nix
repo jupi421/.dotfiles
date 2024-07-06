@@ -91,7 +91,6 @@
 		picom
 		python311Packages.qtile
 		qalculate-gtk
-		qemu
 		ripgrep
 		rofi
 		sassc

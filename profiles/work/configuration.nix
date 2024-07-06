@@ -107,7 +107,7 @@
 	};
 
 	virtualisation.docker.enable = true;
-# Define a user account. Don't forget to set a password with ‘passwd’.
+	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.jay = {
 		isNormalUser = true; 
 		extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.  
@@ -116,11 +116,14 @@
 		]; 
 	};
 
+	virtualisation.libvirtd.enable = true;
+
 	hardware.uinput.enable = true;
 	users.groups.uinput.members = [ "jay" ];
 	users.groups.input.members = [ "jay" ];
 
 	programs.zsh.enable = true;
+
 
 
 # List packages installed in system profile. To search, run: $ nix search
@@ -131,6 +134,7 @@
 		auto-cpufreq
 		blueman
 		firefox 
+		qemu
 		git 
 		tldr
 		binutils
