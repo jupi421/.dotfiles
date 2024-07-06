@@ -15,11 +15,11 @@
 				};
 				espressoMD = espressoMD-flake.packages.${system}.espressoMD;
 				pythonPkgs = pkgs.python3.withPackages (ps: with ps; [
+					matplotlib
 					numba
 					numpy
 					scipy
 					tqdm
-					matplotlib
 				]);
 			in 
 			{
