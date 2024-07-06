@@ -1,6 +1,6 @@
 qemu-system-x86_64 \
   -m 2048 \
-  -drive file=./eos-vm.qcow2,format=qcow2 \
+  -drive file=/home/jay/.VM/eos-vm.qcow2,format=qcow2 \
   -enable-kvm \
   -net nic -net user \
   -smp cores=2 \
