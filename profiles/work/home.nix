@@ -72,6 +72,7 @@
 	home.packages = with pkgs; [
 		blueman
 		brightnessctl
+		chromium
 		dmenu
 		dunst
 		fd
