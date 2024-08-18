@@ -2,10 +2,9 @@
 
 {
 	imports = [
-		inputs.xremap-flake.homeManagerModules.default
-			../../programs/tmux/tmux.nix
-			../../programs/nvim/nvim.nix
-			../../programs/zsh/zsh.nix
+		../../programs/tmux/tmux.nix
+		../../programs/nvim/nvim.nix
+		../../programs/zsh/zsh.nix
 	];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
@@ -23,29 +22,6 @@
 
 # The home.packages option allows you to install Nix packages into your
 # environment.
-
-		services.xremap = {
-			withX11 = true;
-#yamlConfig = ''
-#  modmap:
-#    - name: Global
-#      remap:
-#  	  CapsLock:
-#  	    held: CTRL_L
-#  		alone: Esc
-#  		alone_timeout_millis: 500
-#'';
-			config = {
-				modmap = [
-				{
-					name = "Capslock to Ctrl";
-					remap = {
-						"CapsLock" = "CTRL_L";
-					};
-				}
-				];
-			};
-		};
 
 	programs.direnv = {
 		enable = true;

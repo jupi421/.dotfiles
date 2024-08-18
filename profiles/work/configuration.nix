@@ -62,6 +62,20 @@
 		};
 	};
 
+	services.keyd = {
+		enable = true;
+		keyboards = {
+			default = {
+				ids = [ "*" ];
+				settings = {
+					main = {
+						capslock = "overload(control, esc)";
+					};
+				};
+			};
+		};
+	};
+
 # Configure keymap in X11 services.xserver.xkb.layout = "us";
 # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
@@ -109,7 +123,7 @@
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.jay = {
 		isNormalUser = true; 
-		extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.  
+		extraGroups = [ "wheel" "networkmanager" "docker" "input" ]; # Enable ‘sudo’ for the user.  
 			shell = pkgs.zsh;
 		packages = with pkgs; [
 		]; 

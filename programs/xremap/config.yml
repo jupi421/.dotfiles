@@ -1,6 +1,0 @@
-modmap:
-  remap:
-    CapsLock:
-      held: Ctrl_R
-      alone: Esc
-      alone_timeout_millis: 500
