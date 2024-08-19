@@ -10,7 +10,6 @@
 			--esc keymap
 			vim.keymap.set("i", "jj", "<esc>")
 			vim.keymap.set("v", "gh", "<esc>")
-			vim.keymap.set("c", "jj", "<esc>")
 			--vertical movements
 			vim.keymap.set("n", "j", "jzz")
 			vim.keymap.set("n", "k", "kzz")
