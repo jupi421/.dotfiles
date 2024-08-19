@@ -9,11 +9,11 @@
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: 
-		let 
+	let 
 		lib = nixpkgs.lib;
-	system = "x86_64-linux";
-	pkgs = import nixpkgs { system = "x86_64-linux"; config = { allowUnfree = true; }; };
-	commonConfiguration = ./profiles/work/configuration.nix;
+		system = "x86_64-linux";
+		pkgs = import nixpkgs { system = "x86_64-linux"; config = { allowUnfree = true; }; };
+		commonConfiguration = ./profiles/work/configuration.nix;
 	in {
 		nixosConfigurations = {
 			pc = lib.nixosSystem {
@@ -22,7 +22,6 @@
 					commonConfiguration
 					./hardware/hardware-configuration-pc.nix
 					./programs/syncthing/syncthing-pc.nix
-					#./programs/qemu/qemu.nix
 				];
 			};
 			office-pc = lib.nixosSystem {

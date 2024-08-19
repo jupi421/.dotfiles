@@ -107,7 +107,6 @@
 		".config/dunst".source = ../../programs/dunst;
 		".config/rofi".source = ../../programs/rofi;
 		".config/zathura".source = ../../programs/zathura;
-#".zshrc".source = ../../programs/.zshrc;
 	};
 
 # Home Manager can also manage your environment variables through

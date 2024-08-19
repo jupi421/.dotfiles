@@ -84,6 +84,7 @@
 				local command
 				command=$(history / | fzf-custom | awk '{$1=""; print $0}') || return
 				LBUFFER+="$command"
+				zle accept-line
 				zle reset-prompt
 			}
 
