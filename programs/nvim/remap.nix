@@ -7,9 +7,6 @@
 			vim.g.mapleader = " "
 			--netrw
 			vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-			--esc keymap
-			vim.keymap.set("i", "jj", "<esc>")
-			vim.keymap.set("v", "gh", "<esc>")
 			--vertical movements
 			vim.keymap.set("n", "j", "jzz")
 			vim.keymap.set("n", "k", "kzz")
