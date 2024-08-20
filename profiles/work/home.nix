@@ -73,6 +73,7 @@
 		sassc
 		spotify
 		starship
+		texliveFull
 		teams-for-linux
 		telegram-desktop
 		tree
