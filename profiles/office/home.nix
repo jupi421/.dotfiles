@@ -2,7 +2,6 @@
 
 {
   imports = [
-	inputs.xremap-flake.homeManagerModules.default
 	../../programs/tmux/tmux.nix
 	../../programs/nvim/office/default.nix
 	../../programs/zsh/zsh.nix
