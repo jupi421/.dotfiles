@@ -12,7 +12,7 @@
 		./lsp.nix
 		#./molten.nix
 		./neogen.nix
-		./obsidian.nix
+		#./obsidian.nix
 		./surround.nix
 		./telescope.nix
 		./trouble.nix

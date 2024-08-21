@@ -69,7 +69,7 @@
 			ls.add_snippets(
 				"tex", {
 					--create environment
-					s({trig = "ev", snippetType="autosnippet"}, --snippetType = "autosnippet"},
+					s({trig = "env", snippetType="autosnippet"}, --snippetType = "autosnippet"},
 						fmta(
 							[[
 						  \begin{<>}
@@ -161,10 +161,10 @@
 						fmta(
 						[[
 						  \begin{figure}
-							\centering
-							\includegraphics[width=<>\textwidth]{<>}
-							\caption{<>}
-							\label{fig:<>}
+							  \centering
+							  \includegraphics[width=<>\textwidth]{<>}
+							  \caption{<>}
+							  \label{fig:<>}
 						  \end{figure}
 						]],
 							{

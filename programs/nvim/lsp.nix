@@ -5,6 +5,7 @@
 		clang-tools
 		pyright
 		nil
+		texlab
 	];
 
 	programs.neovim = {
@@ -51,10 +52,12 @@
 					},
 				},
 			})
+
+			require'lspconfig'.texlab.setup{}
 								
 			local cmp = require('cmp')
 			local cmp_select = {behavior = cmp.SelectBehavior.Select}
-
+			
 			require('luasnip.loaders.from_vscode').lazy_load()
 
 			cmp.setup({
