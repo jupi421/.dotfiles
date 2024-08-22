@@ -41,7 +41,7 @@
 				--layout=reverse-list \
 				--border=rounded \
 				--info=inline \
-				--prompt='>  ' \
+				--prompt='> ' \
 				--pointer='→' \
 				--marker='▶' \
 				--color='dark,fg:blue'"
@@ -83,7 +83,7 @@
 				local command
 				command=$(history / | fzf-custom | awk '{$1=""; print $0}') || return
 				LBUFFER+="$command"
-				zle accept-line
+				print -s -- "$command"
 				zle reset-prompt
 			}
 
