@@ -20,7 +20,10 @@
 			bindkey -v
 			export KEYTIMEOUT=20
 
-			# Prevent recursive function call by checking keymap changes
+			if [ "$IS_PC" = "true" ]; then
+				export LD_LIBRARY_PATH="/run/opengl-driver/lib:$LD_LIBRARY_PATH"
+				export LIBGL_DRIVERS_PATH="/run/opengl-driver/lib/dri"
+			fi
 
 			# vim keys in drop down menu
 			bindkey -M menuselect 'h' vi-backward-char
