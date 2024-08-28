@@ -73,6 +73,7 @@
 		sassc
 		spotify
 		starship
+		libreoffice-qt
 		texliveFull
 		teams-for-linux
 		telegram-desktop
