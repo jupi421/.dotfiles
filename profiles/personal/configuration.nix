@@ -106,19 +106,6 @@
 		};
 	};
 
-	hardware.graphics = {
-		enable = true;
-		enable32Bit = true;
-	};
-	# hardware.opengl has beed changed to hardware.graphics
-
-	services.xserver.videoDrivers = ["nvidia"];
-	# services.xserver.videoDrivers = ["amdgpu"];
-
-  hardware.nvidia.modesetting.enable = true;
-	# Enable touchpad support (enabled default in most desktopManager).
-	# services.xserver.libinput.enable = true;
-
 	systemd.user.services.mpris-proxy = {
 		description = "Mpris proxy";
 		after = [ "network.target" "sound.target" ];

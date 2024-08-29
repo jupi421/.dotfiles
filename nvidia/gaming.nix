@@ -8,7 +8,7 @@
 
 	services.xserver.videoDrivers = ["nvidia"];
 
-	hardware.nvidia.modesetting.enable = true;
+    hardware.nvidia.modesetting.enable = true;
 
 	programs.steam.enable = true;
 	programs.steam.gamescopeSession.enable = true;
