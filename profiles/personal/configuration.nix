@@ -117,6 +117,7 @@
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.jay = {
 		isNormalUser = true; 
+		home = "/home/jay/";
 		extraGroups = [ "wheel" "networkmanager" "docker" "input" ]; # Enable ‘sudo’ for the user.  
 		shell = pkgs.zsh;
 		packages = with pkgs; [
