@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
 	# Use the systemd-boot EFI boot loader.
@@ -31,8 +31,16 @@
 
 	# Enable the X11 windowing system.
 	services.xserver.enable = true;
-	services.xserver.windowManager.qtile.enable = true;
-	# Configure LightDM for auto-login
+	services.displayManager.sddm.enable = true;
+	services.displayManager.sddm.wayland = {
+		enable = true;
+	};
+	programs.hyprland = {
+		enable = true;
+		xwayland.enable = true;
+	}; 
+	programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
 	services.displayManager = {
 		enable = true;
 		autoLogin = {

@@ -6,6 +6,11 @@
 		home-manager.url = "github:nix-community/home-manager/master";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		xremap-flake.url = "github:xremap/nix-flake";
+		hyprland.url = "github:hyprwm/Hyprland";
+		hyprland-plugins = {
+			url = "github:hyprwm/hyprland-plugins";
+			inputs.hyprland.follows = "hyprland";
+		};
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: 

@@ -5,6 +5,7 @@
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
 		../../programs/zsh/zsh.nix
+		../../programs/hyprland.nix
 	];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
@@ -99,12 +100,7 @@
 
 	fonts.fontconfig.enable = true;
 
-# Home Manager is pretty good at managing dotfiles. The primary way to manage
-# plain files is through 'home.file'.
 	home.file = {
-#".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/jay/.dotfiles/nvim/nvim;
-		".config/qtile".source = ../../programs/qtile;
-		".config/picom".source = ../../programs/picom;
 		".config/kitty".source = ../../programs/kitty;
 		".config/dunst".source = ../../programs/dunst;
 		".config/rofi".source = ../../programs/rofi;
