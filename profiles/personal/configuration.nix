@@ -38,8 +38,16 @@
 	programs.hyprland = {
 		enable = true;
 		xwayland.enable = true;
+		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 	}; 
-	programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+	xdg.portal = {
+	  enable = true;
+	  configPackages = [inputs.hyprland.packages.${pkgs.system}.hyprland];
+	  extraPortals = [
+		inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
+	  ];
+	};
 
 	services.displayManager = {
 		enable = true;
@@ -146,6 +154,11 @@
 
 	nixpkgs.config.allowUnfree = true;
 
+    environment.pathsToLink = [
+      "/share/xdg-desktop-portal"
+      "/share/applications"
+    ];
+	
 	environment.systemPackages = with pkgs; [ 
 		alsaUtils
 		auto-cpufreq
@@ -210,6 +223,10 @@
 	# For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
 	system.stateVersion = "23.11"; # Did you read the comment?
 
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nix.settings = {
+		experimental-features = [ "nix-command" "flakes" ];
+		substituters = ["https://hyprland.cachix.org"];
+		trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+	};
 }
 

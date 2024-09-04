@@ -5,12 +5,11 @@
 		nixpkgs.url = "nixpkgs/nixos-unstable";
 		home-manager.url = "github:nix-community/home-manager/master";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
-		xremap-flake.url = "github:xremap/nix-flake";
-		hyprland.url = "github:hyprwm/Hyprland";
-		hyprland-plugins = {
-			url = "github:hyprwm/hyprland-plugins";
-			inputs.hyprland.follows = "hyprland";
-		};
+		hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+		#hyprland-plugins = {
+		#	url = "github:hyprwm/hyprland-plugins";
+		#	inputs.hyprland.follows = "hyprland";
+		#};
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: 
@@ -23,16 +22,17 @@
 		in {
 			nixosConfigurations = {
 				pc = lib.nixosSystem {
+					specialArgs = { inherit inputs; };
 					inherit system; 
 					modules = [
 						commonConfiguration
 						./hardware/hardware-configuration-pc.nix
-						./nvidia/gaming.nix
 						./programs/syncthing/syncthing-pc.nix
 						./profiles/personal/is-pc.nix
 					];
 				};
 				office-pc = lib.nixosSystem {
+					specialArgs = { inherit inputs; };
 					inherit system; 
 					modules = [
 						commonConfiguration
@@ -40,6 +40,7 @@
 					];
 				};
 				laptop = lib.nixosSystem {
+					specialArgs = { inherit inputs; };
 					inherit system; 
 					modules = [
 						commonConfiguration

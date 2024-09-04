@@ -5,7 +5,7 @@
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
 		../../programs/zsh/zsh.nix
-		../../programs/hyprland.nix
+		../../programs/hyprland/hyprland.nix
 	];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
@@ -24,29 +24,13 @@
 # The home.packages option allows you to install Nix packages into your
 # environment.
 
-	programs.direnv = {
-		enable = true;
-		enableZshIntegration = true;
-		nix-direnv.enable = true;
-	};
-
-#  programs.zsh = {
-#    enable = true;
-#  };
-#
-#  programs.zsh.enableCompletion = true;
-
 	home.sessionVariables = {
 		SHELL = pkgs.zsh;
 		EDITOR = "nvim";
 	};
 #
-#  programs.starship = {
-#   enable = true;
-#   enableZshIntegration = true;
-#  };
-
 	home.packages = with pkgs; [
+		wezterm
 		blueman
 		brightnessctl
 		chromium
@@ -101,12 +85,41 @@
 	fonts.fontconfig.enable = true;
 
 	home.file = {
-		".config/kitty".source = ../../programs/kitty;
+		#".config/kitty".source = ../../programs/kitty;
 		".config/dunst".source = ../../programs/dunst;
 		".config/rofi".source = ../../programs/rofi;
 		".config/zathura".source = ../../programs/zathura;
 	};
 
+
+	programs.kitty = {
+		enable = true;
+		font = {
+			size = 10;
+			name = "Iosevka";
+		};
+
+		settings = {
+			scrollback_lines = 10000;
+			placement_strategy = "center";
+
+			allow_remote_control = "yes";
+			enable_audio_bell = "no";
+			visual_bell_duration = "0.0";
+
+			copy_on_select = "clipboard";
+
+			selection_foreground = "none";
+			selection_background = "none";
+
+			# colors
+			background_opacity = "0.9";
+		};
+
+		theme = "Catppuccin-Mocha";
+		shellIntegration.enableZshIntegration = true;
+
+	};
 # Home Manager can also manage your environment variables through
 # 'home.sessionVariables'. If you don't want to manage your shell through Home
 # Manager then you have to manually source 'hm-session-vars.sh' located at
