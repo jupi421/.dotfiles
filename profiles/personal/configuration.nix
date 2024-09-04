@@ -3,8 +3,10 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, inputs, ... }:
-
-{
+let 
+	inherit (lib) mkIf mkDefault;
+    inherit (inputs.hyprland.packages.${pkgs.system}) hyprland xdg-desktop-portal-hyprland;
+in {
 	# Use the systemd-boot EFI boot loader.
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
@@ -35,26 +37,22 @@
 	services.displayManager.sddm.wayland = {
 		enable = true;
 	};
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-	}; 
-	xdg.portal = {
-	  enable = true;
-	  configPackages = [inputs.hyprland.packages.${pkgs.system}.hyprland];
-	  extraPortals = [
-		inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
-	  ];
+	
+	programs = {
+		hyprland = {
+		  enable = true;
+		  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+		  portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+		};
 	};
 
-	services.displayManager = {
+	xdg.portal = {
 		enable = true;
-		autoLogin = {
-			enable = true;
-			user = "jay"; # Replace 'yourUserName' with your actual username
-		};
+		extraPortals = [
+			pkgs.xdg-desktop-portal-gtk
+			xdg-desktop-portal-hyprland
+		];
+		config.common.default = "*";
 	};
 
 	services.tlp = {
@@ -148,10 +146,6 @@
 	programs.zsh.enable = true;
 
 
-
-	# List packages installed in system profile. To search, run: $ nix search
-	# wget
-
 	nixpkgs.config.allowUnfree = true;
 
     environment.pathsToLink = [
@@ -172,9 +166,10 @@
 		unzip
 		vim
 		wget
-		xdg-utils
+		#xdg-utils
 		xfce.thunar
 		xorg.xinit
+		xdg-desktop-portal-gtk
 	];
 
 	# Some programs need SUID wrappers, can be configured further or are

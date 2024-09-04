@@ -1,14 +1,16 @@
 { pkgs, lib, inputs, ... }:
-
-{
+let
+	terminal = "kitty";
+in {
 	wayland.windowManager.hyprland = {
 		enable = true;
-		package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+
 
 		settings = {
 
 			monitor = ", 2560x1440@165, auto, auto";
-			"$terminal" = "kitty";
+			#"$terminal" = "kitty";
 			env = [
 				"XCURSOR_SIZE,20"
 				"HYPRCURSOR_SIZE,24"
@@ -105,7 +107,8 @@
 			"$super" = "SUPER"; 
 
 			bind = [
-				"$super, Q, exec, kitty 2>kitty_log.txt"
+				''$super, RETURN, exec,	"${terminal}"''
+				"$super, W, exec, wezterm"
 
 				"$super, C, killactive,"
 				"$super, M, exit,"

@@ -30,6 +30,7 @@
 	};
 #
 	home.packages = with pkgs; [
+		alacritty
 		wezterm
 		blueman
 		brightnessctl
@@ -73,7 +74,6 @@
 		zoom-us
 		zotero
 		zoxide
-		zsh
 
 # fonts
 		font-awesome
