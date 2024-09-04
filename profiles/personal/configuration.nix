@@ -47,12 +47,18 @@ in {
 	};
 
 	xdg.portal = {
-		enable = true;
-		extraPortals = [
-			pkgs.xdg-desktop-portal-gtk
+		config = {
+			sway = {
+				"org.freedesktop.impl.portal.Screenshot.PickColor" = [ "${pkgs.hyprpicker}/bin/hyprpicker" ];
+			};
+			common.default = "*";
+		};
+
+		# gtk portal needed to make gtk apps happy
+		extraPortals = with pkgs; [
+			xdg-desktop-portal-gtk
 			xdg-desktop-portal-hyprland
 		];
-		config.common.default = "*";
 	};
 
 	services.tlp = {
@@ -132,7 +138,7 @@ in {
 	users.users.jay = {
 		isNormalUser = true; 
 		extraGroups = [ "wheel" "networkmanager" "docker" "input" ]; # Enable ‘sudo’ for the user.  
-		shell = pkgs.zsh;
+		shell = pkgs.bash;
 		packages = with pkgs; [
 		]; 
 	};
