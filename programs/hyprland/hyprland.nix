@@ -3,10 +3,12 @@
 
 let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-		
+		swww init &
+		sleep 1
+		swww img ${/home/jay/Pictures/Wallpapers/Mountains.jpg}
 	'';
 in {
-	home.pkgs = with pkgs; [
+	home.packages = with pkgs; [
 		swww
 	];
 
@@ -17,15 +19,17 @@ in {
 
 		settings = {
 
+			exec-once = ''${startupScript}/bin/start'';
+
 			monitor = ", 2560x1440@165, auto, auto";
 			"$terminal" = "kitty";
 			"$filebrowser" = "dolphin";
 
 			env = [
 				"XCURSOR_SIZE,20"
-				"HYPRCURSOR_SIZE,24"
-				"QT_QPA_PLATFORM,wayland"
-				"QT_QPA_PLATFORMTHEME,qt5ct"
+				"HYPRCURSOR_SIZE,20"
+			#	"QT_QPA_PLATFORM,wayland"
+			#	"QT_QPA_PLATFORMTHEME,qt5ct"
 			];
 			
 			general = { 
@@ -185,7 +189,16 @@ in {
 			];
 
 
-			windowrulev2 = "suppressevent maximize, class:.*"; 
+			windowrulev2 = [
+				"suppressevent maximize, class:.*"
+				"workspace 1, class:(kitty)$, title:(kitty)$"
+				"workspace 2, class:(firefox)$, title:(firefox)$"
+				"workspace 5, class:(org.telegram.desktop)$, initialTitle:(Telegram)$"
+				"float, class:(org.telegram.desktop)$, initialTitle:^(?!.*Telegram*.)$"
+				"workspace 5, class:(whatsapp-for-linux)$"
+				"workspace 7, class:(webcord)$, title:(webcord)$"
+				"workspace magic, initialTitle:^(Spotify( Premium)?)$"
+			];
 		};
 
 		extraConfig = ''

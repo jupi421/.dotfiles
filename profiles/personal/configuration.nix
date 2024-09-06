@@ -63,6 +63,14 @@ in {
 		];
 	};
 
+	services.displayManager = {
+		enable = true;
+		autoLogin = {
+			enable = true;
+			user = "jay"; # Replace 'yourUserName' with your actual username
+		};
+	};
+
 	environment.sessionVariables = {
 		NIXOS_OZONE_WL = "1";
 	};
@@ -185,8 +193,6 @@ in {
 		vim
 		wget
 		xdg-desktop-portal-gtk
-		libsForQt5.qt5ct
-		libsForQt5.qtstyleplugin-kvantum
 	];
 
 

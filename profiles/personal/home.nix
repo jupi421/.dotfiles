@@ -44,9 +44,7 @@
 		gnuplot
 		htop
 		kitty
-		kdePackages.dolphin
-		kdePackages.breeze
-		kdePackages.qtsvg
+		xfce.thunar
 		nitrogen
 		notify
 		obsidian
@@ -73,6 +71,7 @@
 		zotero
 		zoxide
 
+		kdePackages.dolphin
 
 # fonts
 		font-awesome
