@@ -28,8 +28,8 @@ in {
 			env = [
 				"XCURSOR_SIZE,20"
 				"HYPRCURSOR_SIZE,20"
-			#	"QT_QPA_PLATFORM,wayland"
-			#	"QT_QPA_PLATFORMTHEME,qt5ct"
+				"QT_QPA_PLATFORM,wayland"
+				"QT_QPA_PLATFORMTHEME,qt5ct"
 			];
 			
 			general = { 
@@ -38,8 +38,8 @@ in {
 
 				border_size = 2;
 
-				"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-				"col.inactive_border" = "rgba(595959aa)";
+				#"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+				#"col.inactive_border" = "rgba(595959aa)";
 
 				resize_on_border = false;
 
@@ -57,7 +57,7 @@ in {
 				drop_shadow = true;
 				shadow_range = 4;
 				shadow_render_power = 3;
-				"col.shadow" = "rgba(1a1a1aee)";
+				#"col.shadow" = "rgba(1a1a1aee)";
 
 				blur = {
 					enabled = true;
@@ -192,12 +192,12 @@ in {
 			windowrulev2 = [
 				"suppressevent maximize, class:.*"
 				"workspace 1, class:(kitty)$, title:(kitty)$"
-				"workspace 2, class:(firefox)$, title:(firefox)$"
+				"workspace 2, initialTitle:(Mozilla Firefox)$"
 				"workspace 5, class:(org.telegram.desktop)$, initialTitle:(Telegram)$"
 				"float, class:(org.telegram.desktop)$, initialTitle:^(?!.*Telegram*.)$"
 				"workspace 5, class:(whatsapp-for-linux)$"
 				"workspace 7, class:(webcord)$, title:(webcord)$"
-				"workspace magic, initialTitle:^(Spotify( Premium)?)$"
+				"workspace 9, initialTitle:^(Spotify( Premium)?)$"
 			];
 		};
 

@@ -10,6 +10,7 @@
 			url = "github:hyprwm/hyprland-plugins";
 			inputs.hyprland.follows = "hyprland";
 		};
+		stylix.url = "github:danth/stylix";
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: 
@@ -68,6 +69,7 @@
 						./programs/eww/eww-pc.nix
 						./programs/gaming/proton/proton.nix
 						./programs/gaming/bottles/bottles.nix
+						inputs.stylix.homeManagerModules.stylix
 					];
 				};
 				office-pc = home-manager.lib.homeManagerConfiguration {

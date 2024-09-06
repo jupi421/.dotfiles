@@ -6,6 +6,7 @@
 		../../programs/nvim/nvim.nix
 		../../programs/zsh/zsh.nix
 		../../programs/hyprland/hyprland.nix
+		../../programs/stylix/stylix.nix
 	];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
@@ -72,6 +73,7 @@
 		zoxide
 
 		kdePackages.dolphin
+		kdePackages.qtsvg
 
 # fonts
 		font-awesome
@@ -93,7 +95,7 @@
 		enable = true;
 		font = {
 			size = 10;
-			name = "Iosevka";
+		#	name = "Iosevka";
 		};
 
 		settings = {
@@ -106,14 +108,14 @@
 
 			copy_on_select = "clipboard";
 
-			selection_foreground = "none";
-			selection_background = "none";
+			#selection_foreground = "none";
+			#selection_background = "none";
 
 			# colors
-			background_opacity = "0.9";
+			#background_opacity = "0.9";
 		};
 
-		theme = "Catppuccin-Mocha";
+		#theme = "Catppuccin-Mocha";
 		shellIntegration.enableZshIntegration = true;
 
 	};
