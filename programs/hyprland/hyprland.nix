@@ -1,7 +1,15 @@
 { pkgs, lib, inputs, ... }:
+
+
 let
-	terminal = "kitty";
+	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+		
+	'';
 in {
+	home.pkgs = with pkgs; [
+		swww
+	];
+
 	wayland.windowManager.hyprland = {
 		enable = true;
 		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -10,10 +18,14 @@ in {
 		settings = {
 
 			monitor = ", 2560x1440@165, auto, auto";
-			#"$terminal" = "kitty";
+			"$terminal" = "kitty";
+			"$filebrowser" = "dolphin";
+
 			env = [
 				"XCURSOR_SIZE,20"
 				"HYPRCURSOR_SIZE,24"
+				"QT_QPA_PLATFORM,wayland"
+				"QT_QPA_PLATFORMTHEME,qt5ct"
 			];
 			
 			general = { 
@@ -107,21 +119,21 @@ in {
 			"$super" = "SUPER"; 
 
 			bind = [
-				''$super, RETURN, exec,	"${terminal}"''
-				"$super, W, exec, wezterm"
+				"$super, RETURN, exec, $terminal"
 
+				"$super, W, exec, firefox"
 				"$super, C, killactive,"
-				"$super, M, exit,"
 				"$super, E, exec, $fileManager"
-				"$super, V, togglefloating,"
+				"$super, F, togglefloating,"
 				"$super, R, exec, $menu"
 				"$super, P, pseudo, # dwindle"
 				"$super, J, togglesplit, # dwindle"
+				"$super, D, exec, rofi -modi drun -show drun -show-icons -config ~/.config/rofi/rofidmenu.rasi"
 
-				"$super, left, movefocus, l"
-				"$super, right, movefocus, r"
-				"$super, up, movefocus, u"
-				"$super, down, movefocus, d"
+				"$super, H, movefocus, l"
+				"$super, S, movefocus, r"
+				"$super, N, movefocus, u"
+				"$super, T, movefocus, d"
 
 				"$super, 1, workspace, 1"
 				"$super, 2, workspace, 2"
@@ -145,15 +157,48 @@ in {
 				"$super shift, 9, movetoworkspace, 9"
 				"$super shift, 0, movetoworkspace, 10"
 
-				"$super, s, togglespecialworkspace, magic"
-				"$super shift, s, movetoworkspace, special:magic"
+				"$super, M, togglespecialworkspace, magic"
+				"$super shift, M, movetoworkspace, special:magic"
 
 				"$super, mouse_down, workspace, e+1"
 				"$super, mouse_up, workspace, e-1"
+
+			];
+
+			bindm = [
+				"$super, mouse:272, movewindow"
+				"$super, mouse:273, resizewindow"
+			];
+
+			binde = [
+				", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+				", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+				", XF86MonBrightnessUp, exec, brightnessctl set +10%"
+				", XF86MonBrightnessDown, exec, brightnessctl set -10%"
+			];
+
+			bindl = [
+				", XF86AudioPlay, exec, playerctl play-pause"
+				", XF86AudioPrev, exec, playerctl previous"
+				", XF86AudioNext, exec, playerctl next"
 			];
 
 
 			windowrulev2 = "suppressevent maximize, class:.*"; 
 		};
+
+		extraConfig = ''
+			bind = $super, R, submap, resize
+
+			submap = resize
+			binde = , S, resizeactive, 20 0
+			binde = , H, resizeactive, -20 0
+			binde = , T, resizeactive, 0 20
+			binde = , N, resizeactive, 0 -20
+			bind = , escape, submap, reset
+			submap = reset
+		'';
 	};
+
 }

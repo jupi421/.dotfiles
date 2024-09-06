@@ -40,13 +40,15 @@ in {
 	
 	programs = {
 		hyprland = {
-		  enable = true;
-		  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-		  portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+			enable = true;
+			xwayland.enable = true;
+			package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+			portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
 		};
 	};
 
 	xdg.portal = {
+		enable = true;
 		config = {
 			sway = {
 				"org.freedesktop.impl.portal.Screenshot.PickColor" = [ "${pkgs.hyprpicker}/bin/hyprpicker" ];
@@ -55,10 +57,14 @@ in {
 		};
 
 		# gtk portal needed to make gtk apps happy
-		extraPortals = with pkgs; [
-			xdg-desktop-portal-gtk
+		extraPortals = [
+			pkgs.xdg-desktop-portal-gtk
 			xdg-desktop-portal-hyprland
 		];
+	};
+
+	environment.sessionVariables = {
+		NIXOS_OZONE_WL = "1";
 	};
 
 	services.tlp = {
@@ -106,25 +112,29 @@ in {
 	# Enable CUPS to print documents.  services.printing.enable = true;
 
 	# Enable sound.
-	hardware.pulseaudio = {
+	security.rtkit.enable = true;
+	services.pipewire = {
 		enable = true;
-		package = pkgs.pulseaudioFull;
+		alsa.enable = true;
+		alsa.support32Bit = true;
+		pulse.enable = true;
+		jack.enable = true;
 	};
 
-	hardware.bluetooth = {
-		enable = true;
-		settings = {
-			General = {
-				Name = "jay-laptop";
-				ControllerMode = "dual";
-				FastConnectable = "true";
-				Experimental = "true";
-			};
-			Policy = {
-				AutoEnable = "false";
-			};
-		};
-	};
+		#hardware.bluetooth = {
+		#	enable = true;
+		#	settings = {
+		#		General = {
+		#			Name = "jay-laptop";
+		#			ControllerMode = "dual";
+		#			FastConnectable = "true";
+		#			Experimental = "true";
+		#		};
+		#		Policy = {
+		#			AutoEnable = "false";
+		#		};
+		#	};
+		#};
 
 	systemd.user.services.mpris-proxy = {
 		description = "Mpris proxy";
@@ -138,7 +148,7 @@ in {
 	users.users.jay = {
 		isNormalUser = true; 
 		extraGroups = [ "wheel" "networkmanager" "docker" "input" ]; # Enable ‘sudo’ for the user.  
-		shell = pkgs.bash;
+		shell = pkgs.zsh;
 		packages = with pkgs; [
 		]; 
 	};
@@ -152,7 +162,9 @@ in {
 	programs.zsh.enable = true;
 
 
-	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config = {
+		allowUnfree = true;
+	};
 
     environment.pathsToLink = [
       "/share/xdg-desktop-portal"
@@ -172,11 +184,11 @@ in {
 		unzip
 		vim
 		wget
-		#xdg-utils
-		xfce.thunar
-		xorg.xinit
 		xdg-desktop-portal-gtk
+		libsForQt5.qt5ct
+		libsForQt5.qtstyleplugin-kvantum
 	];
+
 
 	# Some programs need SUID wrappers, can be configured further or are
 	# started in user sessions.

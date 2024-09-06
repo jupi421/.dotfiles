@@ -25,13 +25,10 @@
 # environment.
 
 	home.sessionVariables = {
-		SHELL = pkgs.zsh;
 		EDITOR = "nvim";
 	};
 #
 	home.packages = with pkgs; [
-		alacritty
-		wezterm
 		blueman
 		brightnessctl
 		chromium
@@ -47,12 +44,14 @@
 		gnuplot
 		htop
 		kitty
+		kdePackages.dolphin
+		kdePackages.breeze
+		kdePackages.qtsvg
 		nitrogen
 		notify
 		obsidian
 		ovito
 		picom
-		python311Packages.qtile
 		qalculate-gtk
 		ripgrep
 		rofi
@@ -66,14 +65,14 @@
 		tree
 		webcord
 		whatsapp-for-linux
-		wmctrl
-		xclip
+		wl-clipboard
 		xournalpp
 		zathura
 		zip
 		zoom-us
 		zotero
 		zoxide
+
 
 # fonts
 		font-awesome
@@ -90,7 +89,6 @@
 		".config/rofi".source = ../../programs/rofi;
 		".config/zathura".source = ../../programs/zathura;
 	};
-
 
 	programs.kitty = {
 		enable = true;
