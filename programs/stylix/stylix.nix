@@ -1,6 +1,8 @@
-{pkgs, ... }:
+{pkgs, inputs, ... }:
 
 {
+	imports = [ inputs.stylix.homeManagerModules.stylix ];
+
 	stylix = {
 		enable = true;
 
@@ -19,6 +21,15 @@
 			};
 		};
 
-		targets.neovim.enable = false;
+		cursor = {
+			package = pkgs.bibata-cursors;
+			name = "Bibata-Modern-Ice";
+			size = 20;
+		};
+
+		targets = {
+			neovim.enable = false;
+			hyprland.enable = true;
+		};
 	};
 }

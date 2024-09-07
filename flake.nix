@@ -11,13 +11,19 @@
 			inputs.hyprland.follows = "hyprland";
 		};
 		stylix.url = "github:danth/stylix";
+		matugen.url = "github:InioX/matugen?ref=v2.2.0";
+		ags.url = "github:Aylur/ags";
+		astal.url = "github:Aylur/astal";
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: 
 		let 
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
-			pkgs = import nixpkgs { system = "x86_64-linux"; config = { allowUnfree = true; }; };
+			pkgs = import nixpkgs { 
+				system = "x86_64-linux"; 
+				config = { allowUnfree = true; }; 
+			};
 			commonConfiguration = ./profiles/personal/configuration.nix;
 			commonHomeConfiguration = ./profiles/personal/home.nix;
 		in {
@@ -30,6 +36,7 @@
 						./hardware/hardware-configuration-pc.nix
 						./programs/syncthing/syncthing-pc.nix
 						./profiles/personal/is-pc.nix
+						./nvidia/gaming.nix
 					];
 				};
 				office-pc = lib.nixosSystem {
@@ -69,7 +76,6 @@
 						./programs/eww/eww-pc.nix
 						./programs/gaming/proton/proton.nix
 						./programs/gaming/bottles/bottles.nix
-						inputs.stylix.homeManagerModules.stylix
 					];
 				};
 				office-pc = home-manager.lib.homeManagerConfiguration {

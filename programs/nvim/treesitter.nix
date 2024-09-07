@@ -8,6 +8,7 @@
 					bash
 					c
 					cpp
+					css
 					lua
 					python
 					java
@@ -15,6 +16,8 @@
 					nix
 					rust
 					query
+					javascript
+					typescript
 				]);
 		in
 			with pkgs.vimPlugins; [

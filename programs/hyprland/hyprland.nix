@@ -5,11 +5,13 @@ let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 		swww init &
 		sleep 1
-		swww img ${/home/jay/Pictures/Wallpapers/Mountains.jpg}
+		swww img ${/home/jay/Pictures/Wallpapers/Mountains-Nord.jpg} &
+		ags
 	'';
 in {
 	home.packages = with pkgs; [
 		swww
+		bibata-cursors
 	];
 
 	wayland.windowManager.hyprland = {
@@ -19,24 +21,24 @@ in {
 
 		settings = {
 
-			exec-once = ''${startupScript}/bin/start'';
+			exec-once = [
+				"${startupScript}/bin/start"
+			];
 
 			monitor = ", 2560x1440@165, auto, auto";
 			"$terminal" = "kitty";
-			"$filebrowser" = "dolphin";
+			"$filebrowser" = "thunar";
 
 			env = [
-				"XCURSOR_SIZE,20"
-				"HYPRCURSOR_SIZE,20"
 				"QT_QPA_PLATFORM,wayland"
 				"QT_QPA_PLATFORMTHEME,qt5ct"
 			];
 			
 			general = { 
 				gaps_in = 5;
-				gaps_out = 20;
+				gaps_out = 5;
 
-				border_size = 2;
+				border_size = 3;
 
 				#"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
 				#"col.inactive_border" = "rgba(595959aa)";
@@ -93,7 +95,6 @@ in {
 			};
 
 			misc = { 
-				force_default_wallpaper = -1; 
 				disable_hyprland_logo = false;
 			};
 

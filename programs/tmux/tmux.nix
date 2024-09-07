@@ -27,22 +27,12 @@ in {
 		mouse = true;
 		plugins = with pkgs; [
 			{
-				plugin = tmuxPlugins.catppuccin;
+				plugin = tmuxPlugins.nord;
 				extraConfig = '' 
 					set -g @catppuccin_flavor 'mocha'
 					set -g @catppuccin_window_tabs_enabled on
 					set -g @catppuccin_date_time "%H:%M"
 					'';
-			}
-			{
-				plugin = tmuxPlugins.resurrect;
-				extraConfig = ''
-					resurrect_dir="$HOME/.dotfiles/tmux/resurrect"
-					set -g @resurrect-dir $resurrect_dir
-					set -g @resurrect-capture-pane-contents 'on'
-					set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
-					set -g @resurrect-processes '"~nvim"'
-				'';
 			}
 			tmuxPlugins.sensible
 			tmuxPlugins.yank
@@ -70,12 +60,12 @@ in {
 			set-option -g automatic-rename-format '#{b:pane_current_path}'
 
 			# bar config
-			set -g status-right '#[fg=b4befe, bold, bg=#1e1e2e]%a %d-%m-%Y   %H:%M#[default]'
+			set -g status-right '%a %d-%m-%Y   %H:%M#[default]' #[fg=b4befe, bold, bg=#1e1e2e]
 			set -g status-position top
-			set -g status-style 'bg=#1e1e2e'
+			#set -g status-style 'bg=#1e1e2e'
 
-			set -g window-status-current-format '#[fg=magenta, bg=#1e1e2e] #I: #W'
-			set -g window-status-format '#[fg=grey, bg=#1e1e2e] #I: #W'
+			set -g window-status-current-format '  #I: #W' #[fg=magenta, bg=#1e1e2e] 
+			set -g window-status-format '  #I: #W' #[fg=grey, bg=#1e1e2e] 
 			set -g window-status-last-style 'fg=white, bg=black'
 
 			# window indexing from 1

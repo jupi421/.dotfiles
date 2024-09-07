@@ -7,6 +7,9 @@
 		../../programs/zsh/zsh.nix
 		../../programs/hyprland/hyprland.nix
 		../../programs/stylix/stylix.nix
+		../../programs/kitty/kitty.nix
+		../../programs/ags/ags.nix
+		../../programs/ags/theme.nix
 	];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
@@ -79,7 +82,7 @@
 		font-awesome
 		iosevka
 		nerdfonts
-		terminus-nerdfont
+		#terminus-nerdfont
 	];
 
 	fonts.fontconfig.enable = true;
@@ -90,35 +93,7 @@
 		".config/rofi".source = ../../programs/rofi;
 		".config/zathura".source = ../../programs/zathura;
 	};
-
-	programs.kitty = {
-		enable = true;
-		font = {
-			size = 10;
-		#	name = "Iosevka";
-		};
-
-		settings = {
-			scrollback_lines = 10000;
-			placement_strategy = "center";
-
-			allow_remote_control = "yes";
-			enable_audio_bell = "no";
-			visual_bell_duration = "0.0";
-
-			copy_on_select = "clipboard";
-
-			#selection_foreground = "none";
-			#selection_background = "none";
-
-			# colors
-			#background_opacity = "0.9";
-		};
-
-		#theme = "Catppuccin-Mocha";
-		shellIntegration.enableZshIntegration = true;
-
-	};
+	
 # Home Manager can also manage your environment variables through
 # 'home.sessionVariables'. If you don't want to manage your shell through Home
 # Manager then you have to manually source 'hm-session-vars.sh' located at
