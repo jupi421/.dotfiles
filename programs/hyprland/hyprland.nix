@@ -1,6 +1,5 @@
 { pkgs, lib, inputs, ... }:
 
-
 let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 		swww init &
@@ -96,6 +95,7 @@ in {
 
 			misc = { 
 				disable_hyprland_logo = false;
+				vrr = 2;
 			};
 
 			input = {

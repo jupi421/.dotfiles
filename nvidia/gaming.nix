@@ -1,14 +1,21 @@
-{pkgs, ... }:
+{pkgs, config, ... }:
 
 {
-	hardware.graphics = {
-		enable = true;
-		enable32Bit = true;
+	hardware = {
+		graphics = {
+			enable = true;
+			enable32Bit = true;
+		};
+
+		nvidia = {
+			open = false;
+			nvidiaSettings = true;
+			modesetting.enable = true;
+			powerManagement.enable = false;
+		};
 	};
-
+		
 	services.xserver.videoDrivers = ["nvidia"];
-
-    hardware.nvidia.modesetting.enable = true;
 
 	programs.steam.enable = true;
 	programs.steam.gamescopeSession.enable = true;
