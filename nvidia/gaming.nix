@@ -29,4 +29,7 @@
 	services.dbus.enable = true;
 
 	programs.gamemode.enable = true;
+
+	programs.coolercontrol.enable = true;
+	programs.coolercontrol.nvidiaSupport = true;
 }
