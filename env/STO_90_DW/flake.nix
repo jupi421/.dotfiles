@@ -21,6 +21,7 @@
 					matplotlib
 					scipy
 					ase
+					pybind11
 				]);
 			in
 				{
