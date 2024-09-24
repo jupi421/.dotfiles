@@ -27,9 +27,14 @@
 				{
 					devShell = pkgs.mkShell {
 						buildInputs = [
+							pkgs.clang-tools
 							pythonEnv 
 #							vasputil 
 						];
+
+						shellHook = ''
+							export CXXFLAGS="$CXXFLAGS $(python -m pybind11 --includes)"
+						'';
 					};
 				}
 		);

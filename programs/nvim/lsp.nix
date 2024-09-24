@@ -37,7 +37,10 @@
 				-- vim.keymap.set("i", "<leader>vsh", function() vim.lsp.buf.signature_help() end, opts)
 			end)
 
-			lsp_zero.setup_servers({'clangd'})
+			require("lspconfig")["clangd"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 
 			require("lspconfig")["pyright"].setup({
 				on_attach = on_attach,
