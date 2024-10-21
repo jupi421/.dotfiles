@@ -91,6 +91,12 @@
 	#		package = pkgs.pulseaudioFull;
 	#	};
 
+	services.pipewire = {
+		enable = true;
+		alsa.enable = true;
+		pulse.enable = true;
+	};
+
 	hardware.bluetooth = {
 		enable = true;
 		settings = {
@@ -149,6 +155,7 @@
 		tldr
 		binutils
 		gcc
+		pulseaudio
 		unzip
 		vim
 		wget
