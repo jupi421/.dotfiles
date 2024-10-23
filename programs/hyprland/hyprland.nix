@@ -1,11 +1,12 @@
 { pkgs, lib, inputs, ... }:
 
 let
+	wallpaper = ../../Wallpapers/Mountains-Nord.jpg;
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 		swww init &
 		sleep 1
-		swww img ${/home/jay/Pictures/Wallpapers/Mountains-Nord.jpg} &
-		ags
+		swww img ${wallpaper} &
+		#ags
 	'';
 in {
 	home.packages = with pkgs; [
@@ -24,7 +25,7 @@ in {
 				"${startupScript}/bin/start"
 			];
 
-			monitor = ", 2560x1440@165, auto, auto";
+			monitor = ", preferred, 0x0, 1.2";
 			"$terminal" = "kitty";
 			"$filebrowser" = "thunar";
 
@@ -136,9 +137,9 @@ in {
 				"$super, D, exec, rofi -modi drun -show drun -show-icons -config ~/.config/rofi/rofidmenu.rasi"
 
 				"$super, H, movefocus, l"
-				"$super, S, movefocus, r"
-				"$super, N, movefocus, u"
-				"$super, T, movefocus, d"
+				"$super, L, movefocus, r"
+				"$super, K, movefocus, u"
+				"$super, J, movefocus, d"
 
 				"$super, 1, workspace, 1"
 				"$super, 2, workspace, 2"
@@ -179,8 +180,9 @@ in {
 				", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
 				", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
 				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+				", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
 				", XF86MonBrightnessUp, exec, brightnessctl set +10%"
-				", XF86MonBrightnessDown, exec, brightnessctl set -10%"
+				", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
 			];
 
 			bindl = [
