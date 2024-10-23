@@ -6,7 +6,7 @@ let
 		swww init &
 		sleep 1
 		swww img ${wallpaper} &
-		#ags
+		waybar &
 	'';
 in {
 	home.packages = with pkgs; [
@@ -17,7 +17,6 @@ in {
 	wayland.windowManager.hyprland = {
 		enable = true;
 		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-
 
 		settings = {
 
@@ -38,10 +37,7 @@ in {
 				gaps_in = 5;
 				gaps_out = 5;
 
-				border_size = 3;
-
-				#"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-				#"col.inactive_border" = "rgba(595959aa)";
+				border_size = 2;
 
 				resize_on_border = false;
 
@@ -59,7 +55,6 @@ in {
 				drop_shadow = true;
 				shadow_range = 4;
 				shadow_render_power = 3;
-				#"col.shadow" = "rgba(1a1a1aee)";
 
 				blur = {
 					enabled = true;
@@ -95,7 +90,7 @@ in {
 			};
 
 			misc = { 
-				disable_hyprland_logo = false;
+				disable_hyprland_logo = true;
 				vrr = 2;
 			};
 
@@ -208,13 +203,12 @@ in {
 			bind = $super, R, submap, resize
 
 			submap = resize
-			binde = , S, resizeactive, 20 0
+			binde = , L, resizeactive, 20 0
 			binde = , H, resizeactive, -20 0
-			binde = , T, resizeactive, 0 20
-			binde = , N, resizeactive, 0 -20
+			binde = , J, resizeactive, 0 20
+			binde = , K, resizeactive, 0 -20
 			bind = , escape, submap, reset
 			submap = reset
 		'';
 	};
-
 }

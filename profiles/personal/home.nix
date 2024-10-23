@@ -7,9 +7,8 @@
 		../../programs/zsh/zsh.nix
 		../../programs/hyprland/hyprland.nix
 		../../programs/stylix/stylix.nix
+		../../programs/waybar/waybar.nix
 		../../programs/kitty/kitty.nix
-		../../programs/ags/ags.nix
-		../../programs/ags/theme.nix
 	];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
