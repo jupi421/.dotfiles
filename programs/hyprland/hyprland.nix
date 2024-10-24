@@ -24,7 +24,7 @@ in {
 				"${startupScript}/bin/start"
 			];
 
-			monitor = ", preferred, 0x0, 1.2";
+			monitor = ", preferred, 0x0, 1";
 			"$terminal" = "kitty";
 			"$filebrowser" = "thunar";
 

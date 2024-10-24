@@ -8,7 +8,7 @@
 				position = "top";
 				height = 10;
 				modules-left = [ "hyprland/workspaces" ];
-				modules-right = [ "pulseaudio" "network" "battery" "clock" ];
+				modules-right = [ "network" "battery" "clock" ];
 				clock = {
 				  format = "<span foreground='#f5c2e7'>   </span>{:%a %d | %H:%M}";
 				  tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
@@ -22,7 +22,7 @@
 					format-warning = "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%";
 					format-critical = "<span size='13000' foreground='#E38C8F'> </span> {capacity}%";
 					format-charging = "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%";
-					format-plugged = "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%";
+					format-plugged = "<span size='13000' foreground='#B1E3AD'></span>{capacity}%";
 					format-alt = "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}";
 					format-full = "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%";
 					format-icons = ["" "" "" "" ""];
@@ -35,14 +35,6 @@
 					format-disconnected = "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected";
 					tooltip-format-wifi = "Signal Strenght: {signalStrength}%";
 				};
-				pulseaudio = {
-					format = "{icon}  {volume}%";
-					format-muted = "";
-					format-icons = {
-						default = ["" "" " "];
-					};
-					on-click = "pavucontrol";
-			    };
 			};	
 		};
 	};
