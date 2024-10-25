@@ -12,6 +12,7 @@ in {
 	home.packages = with pkgs; [
 		swww
 		bibata-cursors
+		hyprshot
 	];
 
 	wayland.windowManager.hyprland = {
@@ -158,12 +159,22 @@ in {
 				"$super shift, 9, movetoworkspace, 9"
 				"$super shift, 0, movetoworkspace, 10"
 
+				"$super shift, H, movewindow, l"
+				"$super shift, L, movewindow, r"
+				"$super shift, J, movewindow, d"
+				"$super shift, K, movewindow, u"
+
 				"$super, M, togglespecialworkspace, magic"
 				"$super shift, M, movetoworkspace, special:magic"
 
 				"$super, mouse_down, workspace, e+1"
 				"$super, mouse_up, workspace, e-1"
 
+				", F11, fullscreen, 0"
+
+				"$super, PRINT, exec, hyprshot -m window -o ~/PicturesScreenshots"
+				", PRINT, exec, hyprshot -m output -o ~/Pictures/Screenshots/"
+				"$super shift, PRINT, exec, hyprshot -m region -o ~/Pictures/Screenshots/"
 			];
 
 			bindm = [

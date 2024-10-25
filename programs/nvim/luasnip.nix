@@ -238,7 +238,7 @@
 					--inline math
 					s({trig = "([^%a])mm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
 						fmta(
-							"<>$<>$",
+							"<>$ <> $",
 							{
 								f( function(_, snip) return snip.captures[1] end ),
 								d(1, get_visual)
