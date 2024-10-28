@@ -13,6 +13,7 @@ in {
 		swww
 		bibata-cursors
 		hyprshot
+		libsForQt5.xwaylandvideobridge
 	];
 
 	wayland.windowManager.hyprland = {
@@ -207,6 +208,12 @@ in {
 				"workspace 5, class:(whatsapp-for-linux)$"
 				"workspace 7, class:(webcord)$, title:(webcord)$"
 				"workspace 9, initialTitle:^(Spotify( Premium)?)$"
+
+				"opacity 0.0 override, class:^(xwaylandvideobridge)$"
+				"noanim, class:^(xwaylandvideobridge)$"
+				"noinitialfocus, class:^(xwaylandvideobridge)$"
+				"maxsize 1 1, class:^(xwaylandvideobridge)$"
+				"noblur, class:^(xwaylandvideobridge)$"
 			];
 		};
 
