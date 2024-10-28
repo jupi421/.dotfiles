@@ -64,7 +64,7 @@
 		teams-for-linux
 		telegram-desktop
 		tree
-		webcord
+		vesktop
 		whatsapp-for-linux
 		wl-clipboard
 		xournalpp
