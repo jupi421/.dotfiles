@@ -67,7 +67,6 @@
 					extraSpecialArgs = { inherit inputs; };
 					modules = [ 
 						commonHomeConfiguration
-						./programs/eww/eww-laptop.nix
 					];
 				};
 				jay-pc = home-manager.lib.homeManagerConfiguration {
@@ -75,9 +74,9 @@
 					extraSpecialArgs = { inherit inputs; };
 					modules = [ 
 						commonHomeConfiguration
-						./programs/eww/eww-pc.nix
 						./programs/gaming/proton/proton.nix
 						./programs/gaming/bottles/bottles.nix
+						./programs/openrgb/openrgb.nix
 					];
 				};
 				office-pc = home-manager.lib.homeManagerConfiguration {
