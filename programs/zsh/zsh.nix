@@ -38,6 +38,7 @@
 			#alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
 			alias tn="tmux-new"
 			alias ts="tmux new -s"
+			alias cd="z"
 			alias fzf-custom="fzf --multi \
 				--height=50% \
 				--margin=5%,2%,2%,5% \

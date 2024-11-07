@@ -129,20 +129,8 @@ in {
 		jack.enable = true;
 	};
 
-		#hardware.bluetooth = {
-		#	enable = true;
-		#	settings = {
-		#		General = {
-		#			Name = "jay-laptop";
-		#			ControllerMode = "dual";
-		#			FastConnectable = "true";
-		#			Experimental = "true";
-		#		};
-		#		Policy = {
-		#			AutoEnable = "false";
-		#		};
-		#	};
-		#};
+	hardware.bluetooth.enable = true;
+	hardware.bluetooth.powerOnBoot = true;
 
 	systemd.user.services.mpris-proxy = {
 		description = "Mpris proxy";
@@ -180,7 +168,7 @@ in {
     ];
 	
 	environment.systemPackages = with pkgs; [ 
-		alsaUtils
+		alsa-utils
 		auto-cpufreq
 		blueman
 		firefox 

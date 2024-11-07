@@ -1,22 +1,24 @@
 { pkgs, lib, inputs, ... }:
 
 let
+	wallpaper = ../../Wallpapers/Mountains-Nord.jpg;
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 		swww init &
 		sleep 1
-		swww img ${/home/jay/Pictures/Wallpapers/Mountains-Nord.jpg} &
-		ags
+		swww img ${wallpaper} &
+		waybar &
 	'';
 in {
 	home.packages = with pkgs; [
 		swww
 		bibata-cursors
+		hyprshot
+		libsForQt5.xwaylandvideobridge
 	];
 
 	wayland.windowManager.hyprland = {
 		enable = true;
 		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-
 
 		settings = {
 
@@ -24,7 +26,7 @@ in {
 				"${startupScript}/bin/start"
 			];
 
-			monitor = ", 2560x1440@165, auto, auto";
+			monitor = ", preferred, 0x0, 1";
 			"$terminal" = "kitty";
 			"$filebrowser" = "thunar";
 
@@ -37,10 +39,7 @@ in {
 				gaps_in = 5;
 				gaps_out = 5;
 
-				border_size = 3;
-
-				#"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-				#"col.inactive_border" = "rgba(595959aa)";
+				border_size = 2;
 
 				resize_on_border = false;
 
@@ -58,7 +57,6 @@ in {
 				drop_shadow = true;
 				shadow_range = 4;
 				shadow_render_power = 3;
-				#"col.shadow" = "rgba(1a1a1aee)";
 
 				blur = {
 					enabled = true;
@@ -94,7 +92,7 @@ in {
 			};
 
 			misc = { 
-				disable_hyprland_logo = false;
+				disable_hyprland_logo = true;
 				vrr = 2;
 			};
 
@@ -136,9 +134,9 @@ in {
 				"$super, D, exec, rofi -modi drun -show drun -show-icons -config ~/.config/rofi/rofidmenu.rasi"
 
 				"$super, H, movefocus, l"
-				"$super, S, movefocus, r"
-				"$super, N, movefocus, u"
-				"$super, T, movefocus, d"
+				"$super, L, movefocus, r"
+				"$super, K, movefocus, u"
+				"$super, J, movefocus, d"
 
 				"$super, 1, workspace, 1"
 				"$super, 2, workspace, 2"
@@ -162,12 +160,22 @@ in {
 				"$super shift, 9, movetoworkspace, 9"
 				"$super shift, 0, movetoworkspace, 10"
 
+				"$super shift, H, movewindow, l"
+				"$super shift, L, movewindow, r"
+				"$super shift, J, movewindow, d"
+				"$super shift, K, movewindow, u"
+
 				"$super, M, togglespecialworkspace, magic"
 				"$super shift, M, movetoworkspace, special:magic"
 
 				"$super, mouse_down, workspace, e+1"
 				"$super, mouse_up, workspace, e-1"
 
+				", F11, fullscreen, 0"
+
+				"$super, PRINT, exec, hyprshot -m window -o ~/PicturesScreenshots"
+				", PRINT, exec, hyprshot -m output -o ~/Pictures/Screenshots/"
+				"$super shift, PRINT, exec, hyprshot -m region -o ~/Pictures/Screenshots/"
 			];
 
 			bindm = [
@@ -179,8 +187,9 @@ in {
 				", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
 				", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
 				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+				", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
 				", XF86MonBrightnessUp, exec, brightnessctl set +10%"
-				", XF86MonBrightnessDown, exec, brightnessctl set -10%"
+				", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
 			];
 
 			bindl = [
@@ -199,6 +208,12 @@ in {
 				"workspace 5, class:(whatsapp-for-linux)$"
 				"workspace 7, class:(webcord)$, title:(webcord)$"
 				"workspace 9, initialTitle:^(Spotify( Premium)?)$"
+
+				"opacity 0.0 override, class:^(xwaylandvideobridge)$"
+				"noanim, class:^(xwaylandvideobridge)$"
+				"noinitialfocus, class:^(xwaylandvideobridge)$"
+				"maxsize 1 1, class:^(xwaylandvideobridge)$"
+				"noblur, class:^(xwaylandvideobridge)$"
 			];
 		};
 
@@ -206,13 +221,12 @@ in {
 			bind = $super, R, submap, resize
 
 			submap = resize
-			binde = , S, resizeactive, 20 0
+			binde = , L, resizeactive, 20 0
 			binde = , H, resizeactive, -20 0
-			binde = , T, resizeactive, 0 20
-			binde = , N, resizeactive, 0 -20
+			binde = , J, resizeactive, 0 20
+			binde = , K, resizeactive, 0 -20
 			bind = , escape, submap, reset
 			submap = reset
 		'';
 	};
-
 }

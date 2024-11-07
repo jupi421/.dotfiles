@@ -15,7 +15,6 @@
 		};
 		stylix.url = "github:danth/stylix";
 		matugen.url = "github:InioX/matugen?ref=v2.2.0";
-		ags.url = "github:Aylur/ags";
 		astal.url = "github:Aylur/astal";
 	};
 
@@ -40,14 +39,7 @@
 						./programs/syncthing/syncthing-pc.nix
 						./profiles/personal/is-pc.nix
 						./nvidia/gaming.nix
-					];
-				};
-				office-pc = lib.nixosSystem {
-					specialArgs = { inherit inputs; };
-					inherit system; 
-					modules = [
-						commonConfiguration
-						./hardware/hardware-configuration-office.nix
+						./programs/openrgb/openrgb.nix
 					];
 				};
 				laptop = lib.nixosSystem {
@@ -61,24 +53,30 @@
 						./profiles/personal/is-laptop.nix
 					];
 				};
-			};
-			homeConfigurations = {
-				jay-laptop = home-manager.lib.homeManagerConfiguration {
-					inherit pkgs;
-					extraSpecialArgs = { inherit inputs; };
-					modules = [ 
-						commonHomeConfiguration
-						./programs/eww/eww-laptop.nix
+				office-pc = lib.nixosSystem {
+					specialArgs = { inherit inputs; };
+					inherit system; 
+					modules = [
+						commonConfiguration
+						./hardware/hardware-configuration-office.nix
 					];
 				};
+			};
+			homeConfigurations = {
 				jay-pc = home-manager.lib.homeManagerConfiguration {
 					inherit pkgs;
 					extraSpecialArgs = { inherit inputs; };
 					modules = [ 
 						commonHomeConfiguration
-						./programs/eww/eww-pc.nix
 						./programs/gaming/proton/proton.nix
 						./programs/gaming/bottles/bottles.nix
+					];
+				};
+				jay-laptop = home-manager.lib.homeManagerConfiguration {
+					inherit pkgs;
+					extraSpecialArgs = { inherit inputs; };
+					modules = [ 
+						commonHomeConfiguration
 					];
 				};
 				office-pc = home-manager.lib.homeManagerConfiguration {

@@ -34,10 +34,22 @@
 				vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
 				vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
 				vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-				-- vim.keymap.set("i", "<leader>vsh", function() vim.lsp.buf.signature_help() end, opts)
+				vim.keymap.set("i", "<A-k>", function() vim.lsp.buf.signature_help() end, opts)
 			end)
 
-			lsp_zero.setup_servers({'clangd'})
+			require("lspconfig")["clangd"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				cmd = {
+					'clangd',
+					'--background-index',
+					'--clang-tidy',
+					'--header-insertion=iwyu',
+					'--all-scopes-completion',
+					'--log=error',
+				},
+				root_dir = require('lspconfig/util').root_pattern("compile_commands.json", "compile_flags.txt", ".git")
+			})
 
 			require("lspconfig")["pyright"].setup({
 				on_attach = on_attach,

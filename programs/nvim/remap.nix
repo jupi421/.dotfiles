@@ -45,6 +45,9 @@
 			vim.keymap.set("n", "_", "<cmd>vertical resize -5<CR>")
 			vim.keymap.set("n", "<C-=>", "<cmd>resize -5<CR>")
 			vim.keymap.set("n", "<C-->", "<cmd>resize +5<CR>")
+			--linewrapping
+			vim.keymap.set("n", "<C-b>", "<cmd>set wrap linebreak<CR>")
+			vim.keymap.set("n", "<leader><C-b>", "<cmd>set nowrap<CR>")
 		'';
 	};
 }
