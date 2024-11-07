@@ -84,7 +84,6 @@
 					extraSpecialArgs = { inherit inputs; };
 					modules = [ 
 						./profiles/office/home.nix 
-						./programs/eww/eww-pc.nix
 					];
 				};
 			};
