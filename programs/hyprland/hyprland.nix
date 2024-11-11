@@ -26,7 +26,11 @@ in {
 				"${startupScript}/bin/start"
 			];
 
-			monitor = ", preferred, 0x0, 1";
+			monitor = [
+				"eDP-1, preferred, 0x0, 1"
+				", preferred, auto, 1, mirror, eDP-1"
+			];
+
 			"$terminal" = "kitty";
 			"$filebrowser" = "thunar";
 

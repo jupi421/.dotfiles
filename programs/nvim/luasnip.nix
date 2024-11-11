@@ -200,7 +200,7 @@
 
 					--textbf
 
-					s({trig = "tt"},
+					s({trig = "bf"},
 						fmta(
 							"\\textbf{<>}",
 							{
