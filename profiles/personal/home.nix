@@ -52,6 +52,7 @@
 		notify
 		obsidian
 		ovito
+		pavucontrol
 		picom
 		qalculate-gtk
 		ripgrep
