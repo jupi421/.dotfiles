@@ -87,7 +87,6 @@
 	fonts.fontconfig.enable = true;
 
 	home.file = {
-		#".config/kitty".source = ../../programs/kitty;
 		".config/dunst".source = ../../programs/dunst;
 		".config/rofi".source = ../../programs/rofi;
 		".config/zathura".source = ../../programs/zathura;

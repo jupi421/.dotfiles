@@ -59,6 +59,7 @@
 					modules = [
 						commonConfiguration
 						./hardware/hardware-configuration-office.nix
+						./profiles/personal/is-laptop.nix
 					];
 				};
 			};

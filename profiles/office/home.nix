@@ -5,6 +5,10 @@
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
 		../../programs/zsh/zsh.nix
+		../../programs/hyprland/hyprland.nix
+		../../programs/stylix/stylix.nix
+		../../programs/waybar/waybar.nix
+		../../programs/kitty/kitty.nix
 	];
 	# Home Manager needs a bit of information about you and the paths it should
 	# manage.
@@ -23,69 +27,59 @@
 	# The home.packages option allows you to install Nix packages into your
 	# environment.
 
-	programs.direnv = {
-		enable = true;
-		enableZshIntegration = true;
-		nix-direnv.enable = true;
-	};
-
-	programs.zsh = {
-		enable = true;
-	};
-
-	programs.zsh.enableCompletion = true;
-	home.sessionVariables.SHELL = pkgs.zsh;
-
-	programs.starship = {
-		enable = true;
-		enableZshIntegration = true;
+	home.sessionVariables = {
+		EDITOR = "nvim";
 	};
 
 	home.packages = with pkgs; [
 		blueman
 		brightnessctl
+		chromium
 		dmenu
 		dunst
 		fd
-		#	inputs.tmux-sessionx.packages.x86_64-linux.default
-
+		feh
 		firefox
 		flameshot
+		fluent-reader
 		fzf
-		feh
 		gdb
 		gnuplot
 		htop
 		kitty
-		tree
+		xfce.thunar
+		nitrogen
+		notify
+		obsidian
+		ovito
 		picom
 		qalculate-gtk
-		python311Packages.qtile
-		ovito
 		ripgrep
 		rofi
 		sassc
+		spotify
 		starship
+		libreoffice-qt
 		texliveFull
-		nitrogen
-		notify
-		wmctrl
-		xclip
-		xorg.xprop
+		teams-for-linux
+		tree
+		vesktop
+		wl-clipboard
 		xournalpp
-		zoxide
-		zsh
 		zathura
-		zotero
 		zip
+		zoom-us
+		zotero
+		zoxide
 
-		chromium
+		kdePackages.dolphin
+		kdePackages.qtsvg
 
-		# fonts
-		iosevka
-		terminus-nerdfont
-		nerdfonts
+# fonts
 		font-awesome
+		iosevka
+		nerdfonts
+		#terminus-nerdfont
 	];
 
 	fonts.fontconfig.enable = true;
@@ -93,9 +87,6 @@
 	# Home Manager is pretty good at managing dotfiles. The primary way to manage
 	# plain files is through 'home.file'.
 	home.file = {
-		".config/qtile".source = ../../programs/qtile;
-		".config/picom".source = ../../programs/picom;
-		".config/kitty".source = ../../programs/kitty;
 		".config/dunst".source = ../../programs/dunst;
 		".config/rofi".source = ../../programs/rofi;
 		".config/zathura".source = ../../programs/zathura;
