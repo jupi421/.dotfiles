@@ -58,6 +58,7 @@
 		ripgrep
 		rofi
 		sassc
+		sshfs
 		spotify
 		starship
 		libreoffice-qt

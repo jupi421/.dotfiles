@@ -6,8 +6,8 @@
 		home-manager.url = "github:nix-community/home-manager/master";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		hyprland = {
-			url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-			inputs.aquamarine.url = "github:hyprwm/aquamarine";
+			url = "github:hyprwm/Hyprland";
+			#inputs.aquamarine.url = "github:hyprwm/aquamarine";
 		};
 		hyprland-plugins = {
 			url = "github:hyprwm/hyprland-plugins";
@@ -15,7 +15,6 @@
 		};
 		stylix.url = "github:danth/stylix";
 		matugen.url = "github:InioX/matugen?ref=v2.2.0";
-		astal.url = "github:Aylur/astal";
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: 
