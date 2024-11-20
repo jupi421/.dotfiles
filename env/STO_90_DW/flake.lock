@@ -68,6 +68,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1731139594,
+        "narHash": "sha256-IigrKK3vYRpUu+HEjPL/phrfh7Ox881er1UEsZvw9Q4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "76612b17c0ce71689921ca12d9ffdc9c23ce40b2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "pybind11-stubgen-flake": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -88,7 +104,8 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "pybind11-stubgen-flake": "pybind11-stubgen-flake"
+        "pybind11-stubgen-flake": "pybind11-stubgen-flake",
+        "vasputil-flake": "vasputil-flake"
       }
     },
     "systems": {
@@ -119,6 +136,21 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "vasputil-flake": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1731338628,
+        "narHash": "sha256-7avPGkbiy72nvTTzRkeJmjH9nxr0+YpsWy0aQkxj+50=",
+        "path": "/home/jay/.dotfiles/programs/extern/vasputil",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/jay/.dotfiles/programs/extern/vasputil",
+        "type": "path"
       }
     }
   },

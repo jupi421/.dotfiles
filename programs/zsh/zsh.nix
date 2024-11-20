@@ -19,6 +19,7 @@
 			# vim mode
 			bindkey -v
 			export KEYTIMEOUT=20
+			export CMAKE_EXPORT_COMPILE_COMMANDS=1
 
 			if [ "$IS_PC" = "true" ]; then
 				export LD_LIBRARY_PATH="/run/opengl-driver/lib:$LD_LIBRARY_PATH"

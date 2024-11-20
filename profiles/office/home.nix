@@ -57,6 +57,7 @@
 		ripgrep
 		rofi
 		sassc
+		sshfs
 		spotify
 		starship
 		libreoffice-qt
@@ -74,6 +75,8 @@
 
 		kdePackages.dolphin
 		kdePackages.qtsvg
+
+		nomachine-client
 
 # fonts
 		font-awesome
