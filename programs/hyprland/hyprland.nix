@@ -18,7 +18,7 @@ in {
 
 	wayland.windowManager.hyprland = {
 		enable = true;
-		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+		package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
 		settings = {
 
@@ -26,7 +26,11 @@ in {
 				"${startupScript}/bin/start"
 			];
 
-			monitor = ", preferred, 0x0, 1";
+			monitor = [
+				"eDP-1, preferred, 0x0, 1"
+				", preferred, auto, 1, mirror, eDP-1"
+			];
+
 			"$terminal" = "kitty";
 			"$filebrowser" = "thunar";
 
@@ -54,9 +58,11 @@ in {
 				active_opacity = 1.0;
 				inactive_opacity = 1.0;
 
-				drop_shadow = true;
-				shadow_range = 4;
-				shadow_render_power = 3;
+				shadow = {
+					enabled = true;
+					range = 4;
+					render_power = 3;
+				};
 
 				blur = {
 					enabled = true;
