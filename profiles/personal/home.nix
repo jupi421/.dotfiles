@@ -32,6 +32,7 @@
 	};
 #
 	home.packages = with pkgs; [
+		beeper
 		blueman
 		brightnessctl
 		chromium
