@@ -3,29 +3,32 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+		flake-utils.url = "github:numtide/flake-utils";
 	};
 
-	outputs = { nixpkgs, ... }@inputs:
-		let
-			system = "x86_64-linux";
-			pkgs = import nixpkgs {
-				inherit system;
-			};
-		in{
-			packages.${system}.colbuilder = pkgs.stdenv.mkDerivation {
-				pname = "colbuilder";
-				version = "2.0.0";
-				src = pkgs.fetchFromGitHub {
-					owner = "graeter-group";
-					repo = "colbuilder";
-					rev = "2.0.0";
-					sha256 = "0000000000000000000000000000000000000000000000000000000000000000";
+	outputs = { self, nixpkgs, flake-utils, ... }:
+		flake-utils.lib.eachDefaultSystem (system :
+			let
+				pkgs = import nixpkgs {
+					inherit system;
 				};
+				pythonPackages = pkgs.python3Packages;
+			in {
+				packages.colbuilder = pythonPackages.buildPythonPackage {
+					pname = "colbuilder";
+					version = "2.0.0";
+					src = pkgs.fetchFromGitHub {
+						owner = "graeter-group";
+						repo = "colbuilder";
+						rev = "2.0.0";
+						sha256 = "sha256-LwHXJOw+GVPkeiaF0gNQWEVXHNEh9fl/3pPAlrxaoHw=";
+					};
 
-				BuildInputs = [
-					pkgs.pymol				
-					pkgs.muscle
-				];
-			};
-		};
+					propagatedBuildInputs = with pkgs; [
+						pymol				
+						muscle
+					];
+				};
+			}
+		);
 }

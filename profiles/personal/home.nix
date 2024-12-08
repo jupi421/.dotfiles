@@ -92,7 +92,6 @@
 	home.file = {
 		".config/dunst".source = ../../programs/dunst;
 		".config/rofi".source = ../../programs/rofi;
-		".config/zathura".source = ../../programs/zathura;
 	};
 	
 # Home Manager can also manage your environment variables through

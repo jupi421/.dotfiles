@@ -70,6 +70,7 @@
 						commonHomeConfiguration
 						./programs/gaming/proton/proton.nix
 						./programs/gaming/bottles/bottles.nix
+						./programs/gaming/waydroid/waydroid.nix
 					];
 				};
 				jay-laptop = home-manager.lib.homeManagerConfiguration {

@@ -39,11 +39,6 @@
 							pybind11-stubgen
 							vasputil 
 						];
-
-						# add compile_flags.txt for clangd linting
-					#shellHook = ''
-					#		echo "$(python -m pybind11 --includes | awk '{ for (i = 1; i <= NF; i++ ) print $i }')" > compile_flags.txt
-					#	'';
 					};
 				}
 		);

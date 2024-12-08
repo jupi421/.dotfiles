@@ -109,6 +109,7 @@
 
 			bindkey '^t' find-directories-widget
 			bindkey '^h' find-hidden-directories-widget
+			bindkey '^s' find-all-directories-widget
 			bindkey '^r' find-command-hist-widget
 			bindkey '^f' find-file-widget
 
