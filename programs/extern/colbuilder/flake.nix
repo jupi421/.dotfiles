@@ -24,9 +24,13 @@
 						sha256 = "sha256-LwHXJOw+GVPkeiaF0gNQWEVXHNEh9fl/3pPAlrxaoHw=";
 					};
 
-					propagatedBuildInputs = with pkgs; [
-						pymol				
+					buildInputs = with pkgs; [
+						pymol
 						muscle
+					];
+
+					propagatedBuildInputs = with pythonPackages; [
+						numpy
 					];
 				};
 			}
