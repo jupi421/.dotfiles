@@ -82,7 +82,6 @@
 		font-awesome
 		iosevka
 		nerdfonts
-		#terminus-nerdfont
 	];
 
 	fonts.fontconfig.enable = true;
