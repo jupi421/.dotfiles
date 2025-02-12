@@ -7,8 +7,8 @@
 		initExtra = /*bash*/''
 			# Lines configured by zsh-newuser-install
 			HISTFILE=~/.histfile
-			HISTSIZE=10000
-			SAVEHIST=10000
+			HISTSIZE=100000
+			SAVEHIST=100000
 
 			autoload -U compinit
 			zstyle ':completion:*' menu select
@@ -34,8 +34,8 @@
 
 			# aliases
 			alias v="nvim"
-			alias l="ls --color=auto -l"
-			alias la="ls --color=auto -la"
+			alias l="ls --color=auto -lh"
+			alias la="ls --color=auto -lah"
 			#alias jukit_kitty="kitty --listen-on=unix:@"$(date +%s%N)" -o allow_remote_control=yes"
 			alias tn="tmux-new"
 			alias ts="tmux new -s"

@@ -85,6 +85,69 @@
 						{condition = line_begin}
 					),
 
+					--create beamer frame
+					s({trig = "frame", snippetType="autosnippet"},
+						fmta(
+							[[
+								\begin{frame}{<>}
+									<>
+								\end{frame}
+							]],
+							{ i(1, "frame title"),
+							  i(2)
+							}
+						),
+						{condition = line_begin}
+					),
+
+					s({trig = "def", snippetType="autosnippet"},
+						fmta(
+							[[
+								\begin{definition}
+									<>
+								\end{definition}
+							]],
+							{ i(1) }
+						),
+						{condition = line_begin}
+					),
+
+					s({trig = "theo", snippetType="autosnippet"},
+						fmta(
+							[[
+								\begin{theorem}
+									<>
+								\end{theorem}
+							]],
+							{ i(1) }
+						),
+						{condition = line_begin}
+					),
+
+					s({trig = "note", snippetType="autosnippet"},
+						fmta(
+							[[
+								\begin{note}
+									<>
+								\end{note}
+							]],
+							{ i(1) }
+						),
+						{condition = line_begin}
+					),
+
+					s({trig = "proof", snippetType="autosnippet"},
+						fmta(
+							[[
+								\begin{proof}
+									<>
+								\end{proof}
+							]],
+							{ i(1) }
+						),
+						{condition = line_begin}
+					),
+
 					--create equation environment
 					s({trig = "eq", snippetType="autosnippet"},
 						fmta(
