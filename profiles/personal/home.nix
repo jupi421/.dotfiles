@@ -35,34 +35,25 @@
 		beeper
 		blueman
 		brightnessctl
-		chromium
 		dmenu
 		dunst
 		fd
-		feh
 		firefox
-		flameshot
-		fluent-reader
 		fzf
 		gdb
 		gnuplot
 		htop
 		kitty
 		xfce.thunar
-		nitrogen
 		notify
-		obsidian
 		ovito
 		pavucontrol
 		picom
 		qalculate-gtk
 		ripgrep
 		rofi
-		sassc
 		sshfs
-		spotify
 		starship
-		libreoffice-qt
 		texliveFull
 		teams-for-linux
 		telegram-desktop
@@ -83,11 +74,11 @@
 # fonts
 		font-awesome
 		iosevka
-		nerdfonts
-		#terminus-nerdfont
 	];
 
-	fonts.fontconfig.enable = true;
+	fonts = {
+		fontconfig.enable = true;
+	};
 
 	home.file = {
 		".config/dunst".source = ../../programs/dunst;
