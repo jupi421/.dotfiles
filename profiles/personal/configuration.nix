@@ -104,7 +104,6 @@ in {
 				settings = {
 					main = {
 						capslock = "overload(control, esc)";
-						space = "overload(meta, space)";
 					};
 				};
 			};
