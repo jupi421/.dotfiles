@@ -58,7 +58,8 @@
 					modules = [
 						commonConfiguration
 						./hardware/hardware-configuration-office.nix
-						./profiles/personal/is-laptop.nix
+						./profiles/personal/is-pc.nix
+						./nvidia/office_nvidia.nix
 					];
 				};
 			};

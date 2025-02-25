@@ -172,8 +172,9 @@ in {
 		auto-cpufreq
 		blueman
 		firefox 
-		qemu
 		git 
+		home-manager
+		qemu
 		tldr
 		binutils
 		gcc
