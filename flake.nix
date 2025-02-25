@@ -60,6 +60,7 @@
 						./hardware/hardware-configuration-office.nix
 						./profiles/personal/is-pc.nix
 						./nvidia/office_nvidia.nix
+						./hardware/data_drive/data_drive_office.nix
 					];
 				};
 			};
