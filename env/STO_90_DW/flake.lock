@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732014248,
-        "narHash": "sha256-y/MEyuJ5oBWrWAic/14LaIr/u5E0wRVzyYsouYY3W6w=",
+        "lastModified": 1739736696,
+        "narHash": "sha256-zON2GNBkzsIyALlOCFiEBcIjI4w38GYOb+P+R4S8Jsw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "23e89b7da85c3640bbc2173fe04f4bd114342367",
+        "rev": "d74a2335ac9c133d6bbec9fc98d91a77f1604c1f",
         "type": "github"
       },
       "original": {
@@ -90,7 +90,7 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1732569775,
+        "lastModified": 1732097251,
         "narHash": "sha256-ttVoZMZR/nNqxTHClWq6dqyybsgvoLSS6HOBqXMrJLE=",
         "path": "/home/jay/.dotfiles/programs/extern/pybind11-stubgen/",
         "type": "path"
@@ -143,7 +143,7 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1732569775,
+        "lastModified": 1739365565,
         "narHash": "sha256-7avPGkbiy72nvTTzRkeJmjH9nxr0+YpsWy0aQkxj+50=",
         "path": "/home/jay/.dotfiles/programs/extern/vasputil",
         "type": "path"
