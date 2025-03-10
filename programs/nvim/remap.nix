@@ -17,8 +17,6 @@
 			--move highlighted lines
 			vim.keymap.set("v", "K", ":m -2<CR>gv=gv")
 			vim.keymap.set("v", "J", ":m '>+<CR>gv=gv")
-			--skip one char
-			vim.keymap.set("i", "<A-space>", "<esc>1la")
 			--create splits
 			vim.keymap.set("n", "<leader>sv", "<cmd>vsp<cr>")
 			vim.keymap.set("n", "<leader>sh", "<cmd>sp<cr>")

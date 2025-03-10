@@ -5,7 +5,7 @@
 { config, lib, pkgs, inputs, ... }:
 let 
 	inherit (lib) mkIf mkDefault;
-    inherit (inputs.hyprland.packages.${pkgs.system}) hyprland xdg-desktop-portal-hyprland;
+	inherit (inputs.hyprland.packages.${pkgs.system}) hyprland xdg-desktop-portal-hyprland;
 in {
 	# Use the systemd-boot EFI boot loader.
 	boot.loader.systemd-boot.enable = true;
@@ -37,7 +37,7 @@ in {
 	services.displayManager.sddm.wayland = {
 		enable = true;
 	};
-	
+
 	programs = {
 		hyprland = {
 			enable = true;
@@ -102,7 +102,11 @@ in {
 			default = {
 				ids = [ "*" ];
 				settings = {
+					global = {
+						overload_tap_timeout = "500";
+					};
 					main = {
+						esc = "capslock";
 						capslock = "overload(control, esc)";
 					};
 				};
@@ -167,6 +171,9 @@ in {
       "/share/applications"
     ];
 	
+
+	hardware.keyboard.zsa.enable = true;
+
 	environment.systemPackages = with pkgs; [ 
 		alsa-utils
 		auto-cpufreq
