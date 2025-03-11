@@ -99,6 +99,17 @@ in {
 	services.keyd = {
 		enable = true;
 		keyboards = {
+			zsaMoonlander = {
+        # Adjust vendor/product to match your actual device
+			ids = ["  vendor = 3297  product = 19661 bus = usb"];
+			settings = {
+			# Either leave it empty or add minimal config
+				main = {
+            # If you really want NO remaps, just leave this empty.
+            # Example: no changes
+				};
+			};
+		};
 			default = {
 				ids = [ "*" ];
 				settings = {
@@ -185,6 +196,7 @@ in {
 		tldr
 		binutils
 		gcc
+		keyd
 		unzip
 		vim
 		wget
