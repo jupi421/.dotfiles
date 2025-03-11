@@ -104,7 +104,7 @@ in {
 
 			input = {
 				kb_layout = "us";
-				kb_variant = "dvorak";
+				kb_variant = "";
 
 				follow_mouse = 1;
 

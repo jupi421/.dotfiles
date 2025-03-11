@@ -46,7 +46,7 @@
 		kitty
 		xfce.thunar
 		notify
-		(ovito.override { qscintilla = libsForQt5.qscintilla; })
+		#(ovito.override { qscintilla = libsForQt5.qscintilla; })
 		pavucontrol
 		picom
 		qalculate-gtk
