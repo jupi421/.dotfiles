@@ -46,7 +46,7 @@
 		kitty
 		xfce.thunar
 		notify
-		#(ovito.override { qscintilla = libsForQt5.qscintilla; })
+		ovito
 		pavucontrol
 		picom
 		qalculate-gtk
@@ -55,6 +55,7 @@
 		sshfs
 		starship
 		texliveFull
+		networkmanagerapplet
 		teams-for-linux
 		telegram-desktop
 		tree
@@ -68,11 +69,8 @@
 		zotero
 		zoxide
 
-		kdePackages.dolphin
-		kdePackages.qtsvg
-
 # fonts
-		font-awesome
+		nerd-fonts.symbols-only
 		iosevka
 	];
 
