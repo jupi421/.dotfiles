@@ -1,5 +1,5 @@
 {
-	description = "Collagen Project";
+	description = "conda env";
 
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -11,6 +11,7 @@
 			let
 				pkgs = import nixpkgs {
 					inherit system;
+					config = { allowUnfree = true; };
 				};
 
 				pythonEnv = pkgs.python3.withPackages (ps: with ps; [
@@ -21,12 +22,16 @@
 					devShells.default = pkgs.mkShell {
 
 						buildInputs = [ 
-							pythonEnv 
-							steam-run	
+						#pythonEnv 
+							pkgs.conda
+							pkgs.steam-run	
 						];
 
+							#eval "$(conda shell.zsh hook)"
 						shellInit = ''
-							eval "$(conda shell.zsh hook)"
+							echo "Launching conda-shell with python=3.12, numpy, and matplotlib..."
+							# The "exec" replaces the current shell so that direnv and interactive usage work seamlessly.
+							exec conda-shell python=3.12 numpy matplotlib
 						'';
 					};
 				}
