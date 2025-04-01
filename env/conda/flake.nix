@@ -1,29 +1,28 @@
 {
-  description = "NixOS flake with a conda dev environment for numpy and matplotlib";
+	description = "Example flake that provides a shell with conda pre-initialized for zsh";
 
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-		flake-utils.url = "github:numtide/flake-utils";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 	};
 
-	outputs = { self, nixpkgs, flake-utils, ... }:
-		flake-utils.lib.eachDefaultSystem (system:
-			let
-				pkgs = import nixpkgs 
-					{ 
-						inherit system;
-						config.allowUnfree = true;
-				};
+	outputs = { self, nixpkgs, ... }:
+		let
+			system = "x86_64-linux";
+			pkgs = import nixpkgs {
+				inherit system;
+			};
 
-			in {
-				devShells.default = pkgs.mkShell {
-					buildInputs = with pkgs; [
-						conda
-						steam-run
-						gromacsPlumed
-						freetype
-						xorg.libXScrnSaver
-					];
-				};
-			});
+			pythonEnv = pkgs.python3.withPackages (ps: with ps; [
+				conda
+			]);
+
+		in {
+			devShells.${system}.default = pkgs.mkShell {
+				buildInputs = [
+					pkgs.conda
+					pkgs.cmake
+					pkgs.mpi
+				];
+			};
+		};
 }
