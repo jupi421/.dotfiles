@@ -22,6 +22,7 @@
 					pkgs.conda
 					pkgs.cmake
 					pkgs.mpi
+					pkgs.llvmPackages_20.openmp
 				];
 			};
 		};
