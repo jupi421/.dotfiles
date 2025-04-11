@@ -18,7 +18,12 @@
 
 			# vim mode
 			bindkey -v
+			bindkey -M menuselect 'h' vi-backward-char
+			bindkey -M menuselect 'k' vi-up-line-or-history
+			bindkey -M menuselect 'l' vi-forward-char
+			bindkey -M menuselect 'j' vi-down-line-or-history
 			export KEYTIMEOUT=20
+
 			export CMAKE_EXPORT_COMPILE_COMMANDS=1
 
 			if [ "$IS_PC" = "true" ]; then
@@ -26,11 +31,6 @@
 				export LIBGL_DRIVERS_PATH="/run/opengl-driver/lib/dri"
 			fi
 
-			# vim keys in drop down menu
-			bindkey -M menuselect 'h' vi-backward-char
-			bindkey -M menuselect 'k' vi-up-line-or-history
-			bindkey -M menuselect 'l' vi-forward-char
-			bindkey -M menuselect 'j' vi-down-line-or-history
 
 			# aliases
 			alias v="nvim"
