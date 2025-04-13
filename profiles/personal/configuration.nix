@@ -96,34 +96,34 @@ in {
 		};
 	};
 
-	services.keyd = {
-		enable = true;
-		keyboards = {
-			zsaMoonlander = {
-        # Adjust vendor/product to match your actual device
-			ids = ["  vendor = 3297  product = 19661 bus = usb"];
-			settings = {
-			# Either leave it empty or add minimal config
-				main = {
-            # If you really want NO remaps, just leave this empty.
-            # Example: no changes
-				};
-			};
-		};
-			default = {
-				ids = [ "*" ];
-				settings = {
-					global = {
-						overload_tap_timeout = "500";
-					};
-					main = {
-						esc = "capslock";
-						capslock = "overload(control, esc)";
-					};
-				};
-			};
-		};
-	};
+			#	services.keyd = {
+		#		enable = true;
+		#		keyboards = {
+		#			zsaMoonlander = {
+		#        # Adjust vendor/product to match your actual device
+		#			ids = ["  vendor = 3297  product = 19661 bus = usb"];
+		#			settings = {
+		#			# Either leave it empty or add minimal config
+		#				main = {
+		#            # If you really want NO remaps, just leave this empty.
+		#            # Example: no changes
+		#				};
+		#			};
+		#		};
+		#			default = {
+		#				ids = [ "*" ];
+		#				settings = {
+		#					global = {
+		#						overload_tap_timeout = "500";
+		#					};
+		#					main = {
+		#						esc = "capslock";
+		#						capslock = "overload(control, esc)";
+		#					};
+		#				};
+		#			};
+		#		};
+		#	};
 
 	# Configure keymap in X11 services.xserver.xkb.layout = "us";
 	# services.xserver.xkb.options = "eurosign:e,caps:escape";

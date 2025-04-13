@@ -104,7 +104,7 @@ in {
 
 			input = {
 				kb_layout = "us";
-				kb_variant = "";
+				kb_variant = "dvorak";
 
 				follow_mouse = 1;
 
@@ -119,10 +119,22 @@ in {
 				workspace_swipe = false;
 			};
 
-			device = {
-				name = "epic-mouse-v1";
-				sensitivity = -0.5;
-			};
+			device = [
+				{
+					name = "epic-mouse-v1";
+					sensitivity = -0.5;
+				}
+				{
+					name = "zsa-technology-labs-moonlander-mark-i";
+					kb_layout = "us";
+					kb_variant = "";
+				}
+				{
+					name = "zsa-technology-labs-moonlander-mark-i-keyboard";
+					kb_layout = "us";
+					kb_variant = "";
+				}
+			];
 
 
 			"$super" = "SUPER"; 

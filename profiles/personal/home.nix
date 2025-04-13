@@ -47,6 +47,7 @@
 		xfce.thunar
 		notify
 		ovito
+		jmol
 		pavucontrol
 		picom
 		qalculate-gtk
