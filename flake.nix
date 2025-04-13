@@ -73,6 +73,7 @@
 						./programs/gaming/proton/proton.nix
 						./programs/gaming/bottles/bottles.nix
 						./programs/gaming/waydroid/waydroid.nix
+						./programs/hyprland/hyprland-pc.nix
 					];
 				};
 				jay-laptop = home-manager.lib.homeManagerConfiguration {
@@ -80,6 +81,7 @@
 					extraSpecialArgs = { inherit inputs; };
 					modules = [ 
 						commonHomeConfiguration
+						./programs/hyprland/hyprland-laptop.nix
 					];
 				};
 				office-pc = home-manager.lib.homeManagerConfiguration {
@@ -87,6 +89,7 @@
 					extraSpecialArgs = { inherit inputs; };
 					modules = [ 
 						./profiles/office/home.nix 
+						./programs/hyprland/hyprland-pc
 					];
 				};
 			};

@@ -24,6 +24,18 @@
 # release notes.
 	home.stateVersion = "23.11"; # Please read the comment before changing.
 
+	nixpkgs.overlays = [
+		(final: prev: {
+			ovito = prev.ovito.overrideAttrs (old: {
+				nativeBuildInputs =
+					(old.nativeBuildInputs or []) ++ [ final.wrapGAppsHook ];
+
+				postFixup = (old.postFixup or "") + ''
+		wrapQtApp $out/bin/ovito --set QT_QPA_PLATFORM xcb
+				'';
+			});
+		})
+	];
 # The home.packages option allows you to install Nix packages into your
 # environment.
 
@@ -47,12 +59,14 @@
 		xfce.thunar
 		notify
 		ovito
+		jmol
 		pavucontrol
 		picom
 		qalculate-gtk
 		ripgrep
 		rofi
 		sshfs
+		step-cli
 		starship
 		texliveFull
 		tree
