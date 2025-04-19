@@ -54,6 +54,7 @@
 		rofi
 		sshfs
 		starship
+		step-cli	
 		texliveFull
 		networkmanagerapplet
 		teams-for-linux
