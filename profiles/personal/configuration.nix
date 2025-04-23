@@ -47,21 +47,21 @@ in {
 		};
 	};
 
-	xdg.portal = {
-		enable = true;
-		config = {
-			sway = {
-				"org.freedesktop.impl.portal.Screenshot.PickColor" = [ "${pkgs.hyprpicker}/bin/hyprpicker" ];
-			};
-			common.default = "*";
-		};
+		#xdg.portal = {
+		#	enable = true;
+		#	config = {
+		#		sway = {
+		#			"org.freedesktop.impl.portal.Screenshot.PickColor" = [ "${pkgs.hyprpicker}/bin/hyprpicker" ];
+		#		};
+		#		common.default = "*";
+		#	};
 
-		# gtk portal needed to make gtk apps happy
-		extraPortals = [
-			pkgs.xdg-desktop-portal-gtk
-			xdg-desktop-portal-hyprland
-		];
-	};
+		#	# gtk portal needed to make gtk apps happy
+		#	extraPortals = [
+		#		xdg-desktop-portal-hyprland
+		#		pkgs.xdg-desktop-portal-gtk
+		#	];
+		#};
 
 	services.displayManager = {
 		enable = true;

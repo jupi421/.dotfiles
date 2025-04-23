@@ -35,6 +35,7 @@
 						buildInputs = [
 							pythonEnv 
 							pybind11-stubgen
+							pkgs.valgrind
 						];
 					};
 				}
