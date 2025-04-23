@@ -36,7 +36,12 @@
 							pythonEnv 
 							pybind11-stubgen
 							pkgs.valgrind
+							pkgs.linuxKernel.packages.linux_zen.perf
 						];
+
+						shellHook = ''
+							export CMAKE_EXPORT_COMPILE_COMMANDS=ON
+						'';
 					};
 				}
 		);

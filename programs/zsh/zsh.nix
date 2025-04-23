@@ -4,7 +4,7 @@
 	programs.zsh = {
 		enable = true;
 		enableCompletion = true;
-		initExtra = /*bash*/''
+		initContent = /*bash*/''
 			# Lines configured by zsh-newuser-install
 			HISTFILE=~/.histfile
 			HISTSIZE=100000
@@ -52,6 +52,7 @@
 				--color='dark,fg:blue'"
 			alias run-vm="/home/jay/.VM/run-vm.sh"
 			alias leonardo="~/.dotfiles/leonardo.sh"
+			alias gdb="gdb -q"
 
 			export FZF_DEFAULT_OPTS=" \
 			--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
