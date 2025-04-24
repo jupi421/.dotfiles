@@ -51,7 +51,7 @@
 				--marker='▶' \
 				--color='dark,fg:blue'"
 			alias run-vm="/home/jay/.VM/run-vm.sh"
-			alias leonardo="~/.dotfiles/leonardo.sh"
+			alias leonardo="source ~/.dotfiles/leonardo.sh"
 			alias gdb="gdb -q"
 
 			export FZF_DEFAULT_OPTS=" \
