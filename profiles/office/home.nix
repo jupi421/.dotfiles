@@ -7,7 +7,6 @@ in {
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
 		../../programs/zsh/zsh.nix
-		../../programs/hyprland/hyprland.nix
 		../../programs/stylix/stylix.nix
 		../../programs/waybar/waybar.nix
 		../../programs/kitty/kitty.nix
