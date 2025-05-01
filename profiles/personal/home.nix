@@ -1,6 +1,8 @@
 {config, pkgs, inputs, ... }:
+let
+	ovitoOverlay = (builtins.getFlake "/home/jay/.dotfiles/programs/extern/ovito").overlays.default;
+in {
 
-{
 	imports = [
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
@@ -30,20 +32,7 @@
 		EDITOR = "nvim";
 	};
 
-nixpkgs.overlays = [
-  (final: prev: {
-    ovito = prev.ovito.overrideAttrs (_: {
-      version = "3.12.2";
-      src = prev.fetchFromGitLab {
-        owner  = "stuko";
-        repo   = "ovito";
-        rev    = "v3.12.2";
-        fetchSubmodules = true;                # ← NEW
-        sha256 = "sha256-qpKQAO2f1TfspqjbCLA/3ERWdMeknKe0a54yd9PZbsA=";          # ← update!
-      };
-    });
-  })
-];
+	nixpkgs.overlays = [ ovitoOverlay ];
 
 	home.packages = with pkgs; [
 		beeper
