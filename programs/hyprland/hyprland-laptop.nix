@@ -105,7 +105,7 @@ in {
 
 			input = {
 				kb_layout = "us";
-				kb_variant = "";
+				kb_variant = "dvorak";
 
 				follow_mouse = 1;
 
@@ -128,7 +128,7 @@ in {
 				{
 					name = "zsa-technology-labs-moonlander-mark-i";
 					kb_layout = "us";
-					kb_variant = "";
+					kb_variant = "dvorak";
 				}
 				{
 					name = "zsa-technology-labs-moonlander-mark-i-keyboard";
