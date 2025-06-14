@@ -88,7 +88,7 @@
 					extraSpecialArgs = { inherit inputs; };
 					modules = [ 
 						./profiles/office/home.nix 
-						./programs/hyprland/hyprland-pc
+						./programs/hyprland/hyprland-pc.nix
 					];
 				};
 			};

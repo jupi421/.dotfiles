@@ -1,48 +1,29 @@
 {config, pkgs, inputs, ... }:
 
-{
+let
+	ovitoOverlay = (builtins.getFlake "/home/jay/.dotfiles/programs/extern/ovito").overlays.default;
+in {
 	imports = [
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
 		../../programs/zsh/zsh.nix
-		../../programs/hyprland/hyprland.nix
 		../../programs/stylix/stylix.nix
 		../../programs/waybar/waybar.nix
 		../../programs/kitty/kitty.nix
 	];
-# Home Manager needs a bit of information about you and the paths it should
-# manage.
-	home.username = "jay";
-	home.homeDirectory = "/home/jay";
-
-# This value determines the Home Manager release that your configuration is
-# compatible with. This helps avoid breakage when a new Home Manager release
-# introduces backwards incompatible changes.
-#
-# You should not change this value, even if you update Home Manager. If you do
-# want to update the value, then make sure to first check the Home Manager
-# release notes.
+	
+	
 	home.stateVersion = "23.11"; # Please read the comment before changing.
 
-	nixpkgs.overlays = [
-		(final: prev: {
-			ovito = prev.ovito.overrideAttrs (old: {
-				nativeBuildInputs =
-					(old.nativeBuildInputs or []) ++ [ final.wrapGAppsHook ];
-
-				postFixup = (old.postFixup or "") + ''
-		wrapQtApp $out/bin/ovito --set QT_QPA_PLATFORM xcb
-				'';
-			});
-		})
-	];
-# The home.packages option allows you to install Nix packages into your
-# environment.
+	home.username = "jay";
+	home.homeDirectory = "/home/jay";
 
 	home.sessionVariables = {
 		EDITOR = "nvim";
 	};
-#
+
+	nixpkgs.overlays = [ ovitoOverlay ];
+
 	home.packages = with pkgs; [
 		beeper
 		blueman

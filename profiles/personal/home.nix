@@ -1,6 +1,8 @@
 {config, pkgs, inputs, ... }:
+let
+	ovitoOverlay = (builtins.getFlake "/home/jay/.dotfiles/programs/extern/ovito").overlays.default;
+in {
 
-{
 	imports = [
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
@@ -9,41 +11,17 @@
 		../../programs/waybar/waybar.nix
 		../../programs/kitty/kitty.nix
 	];
-	# Home Manager needs a bit of information about you and the paths it should
-	# manage.
+	
 	home.username = "jay";
 	home.homeDirectory = "/home/jay";
 
-	# This value determines the Home Manager release that your configuration is
-	# compatible with. This helps avoid breakage when a new Home Manager release
-	# introduces backwards incompatible changes.
-	#
-	# You should not change this value, even if you update Home Manager. If you do
-	# want to update the value, then make sure to first check the Home Manager
-	# release notes.
 	home.stateVersion = "23.11"; # Please read the comment before changing.
-
-	# The home.packages option allows you to install Nix packages into your
-	# environment.
 
 	home.sessionVariables = {
 		EDITOR = "nvim";
 	};
 
-	#nixpkgs.overlays = [
-	#  (final: prev: {
-	#	ovito = prev.ovito.overrideAttrs (_: {
-	#	  version = "3.12.2";
-	#	  src = prev.fetchFromGitLab {
-	#		owner  = "stuko";
-	#		repo   = "ovito";
-	#		rev    = "v3.12.2";
-	#		fetchSubmodules = true;                # ← NEW
-	#		sha256 = "sha256-qpKQAO2f1TfspqjbCLA/3ERWdMeknKe0a54yd9PZbsA=";          # ← update!
-	#	  };
-	#	});
-	#  })
-	#];
+	nixpkgs.overlays = [ ovitoOverlay ];
 
 	home.packages = with pkgs; [
 		beeper
