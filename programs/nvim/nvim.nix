@@ -32,7 +32,6 @@
 		plugins = with pkgs.vimPlugins; [
 			nvim-web-devicons
 			plenary-nvim
-			obsidian-nvim
 		];
 	};
 
