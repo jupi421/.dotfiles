@@ -14,9 +14,10 @@
 		};
 		stylix.url = "github:danth/stylix";
 		matugen.url = "github:InioX/matugen?ref=v2.2.0";
+		flake-utils.url  = "github:numtide/flake-utils";
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+	outputs = { self, nixpkgs, home-manager, flake-utils, ... }@inputs: 
 		let 
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
