@@ -51,7 +51,7 @@ in {
 		starship
 		texliveFull
 		tree
-		vesktop
+		discord
 		wl-clipboard
 		xournalpp
 		zathura

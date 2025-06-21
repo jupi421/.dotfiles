@@ -55,7 +55,7 @@ in {
 		teams-for-linux
 		telegram-desktop
 		tree
-		vesktop
+		discord
 		whatsapp-for-linux
 		wl-clipboard
 		xournalpp
