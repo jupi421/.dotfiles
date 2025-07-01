@@ -175,7 +175,7 @@
 					),
 
 					--create section
-					s({trig = "h1", snippetType = "autosnippet"},
+					s({trig = "sec"},
 						fmta(
 							[[
 						  \section{<>}
@@ -185,12 +185,11 @@
 								i(1),
 								i(0)
 							}
-						),
-						{condition = line_begin}
+						)
 					),
 
 					--create subsection
-					s({trig = "h2", snippetType = "autosnippet"},
+					s({trig = "ssec"},
 						fmta(
 							[[
 						  \subsection{<>}
@@ -200,12 +199,11 @@
 								i(1),
 								i(0)
 							}
-						),
-						{condition = line_begin}
+						)
 					),
 
 					--create subsubsection
-					s({trig = "h3", snippetType = "autosnippet"},
+					s({trig = "sssec"},
 						fmta(
 							[[
 						  \subsubsection{<>}
@@ -215,8 +213,7 @@
 								i(1),
 								i(0)
 							}
-						),
-						{condition = line_begin}
+						)
 					),
 
 					--create figure environmet
@@ -508,13 +505,13 @@
 			})
 
 			-- Set Keymaps
-			vim.keymap.set({ "i", "s" }, "<c-j>", function ()
+			vim.keymap.set({ "i", "s" }, "<c-n>", function ()
 				if ls.expand_or_jumpable() then
 					ls.expand_or_jump()
 				end
 			end, { silent = true })
 
-			vim.keymap.set({ "i", "s" }, "<c-k>", function ()
+			vim.keymap.set({ "i", "s" }, "<c-p>", function ()
 				if ls.jumpable(-1) then
 					ls.jump(-1)
 				end
