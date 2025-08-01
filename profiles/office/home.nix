@@ -37,7 +37,7 @@ in {
 		gnuplot
 		htop
 		kitty
-		xfce.thunar
+		loupe
 		notify
 		ovito
 		jmol
@@ -50,6 +50,7 @@ in {
 		step-cli
 		starship
 		texliveFull
+		telegram-desktop
 		tree
 		discord
 		wl-clipboard
@@ -59,6 +60,7 @@ in {
 		zoom-us
 		zotero
 		zoxide
+		inkscape
 
 		kdePackages.dolphin
 		kdePackages.qtsvg
