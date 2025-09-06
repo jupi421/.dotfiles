@@ -13,7 +13,7 @@ in {
 		swww
 		bibata-cursors
 		hyprshot
-		libsForQt5.xwaylandvideobridge
+		kdePackages.xwaylandvideobridge
 	];
 
 	wayland.windowManager.hyprland = {

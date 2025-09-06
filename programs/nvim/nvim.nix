@@ -19,8 +19,8 @@
 		./vimtex.nix
 		./zenmode.nix
 		./opts.nix
-		./quarto.nix
 		./remap.nix
+		./dap.nix
 	];
 	
 	programs.neovim = {
