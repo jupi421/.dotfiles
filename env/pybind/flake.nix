@@ -30,6 +30,7 @@
 							pkg-config 
 							cmake
 							eigen
+							ninja
 						];
 
 						buildInputs = [

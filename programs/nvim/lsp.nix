@@ -47,6 +47,8 @@
 					'--header-insertion=never',
 					'--all-scopes-completion',
 					'--log=error',
+					'--compile-commands-dir=build',
+					'--query-driver=/nix/store/*/bin/*'
 				},
 				root_dir = require('lspconfig/util').root_pattern("compile_commands.json", "compile_flags.txt", ".git")
 			})
