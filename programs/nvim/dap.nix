@@ -124,17 +124,17 @@
 			dap.configurations.c    = dap.configurations.cpp
 			dap.configurations.rust = dap.configurations.cpp
 
-			vim.keymap.set("n", "<space>b",  dap.toggle_breakpoint)
-			vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
-			vim.keymap.set("n", "<space>e",  function() require("dapui").eval(nil, { enter = true }) end)
-			vim.keymap.set("n", "<space>cb", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
-			vim.keymap.set('n', '<space>db', function() require('dap').clear_breakpoints() end)
+			vim.keymap.set("n", "<space>db",  dap.toggle_breakpoint)
+			vim.keymap.set("n", "<space>dh", dap.run_to_cursor)
+			vim.keymap.set("n", "<space>de",  function() require("dapui").eval(nil, { enter = true }) end)
+			vim.keymap.set("n", "<space>dc", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
+			vim.keymap.set('n', '<space>dB', function() require('dap').clear_breakpoints() end)
 
 			vim.keymap.set("n", "<F1>", dap.continue)
 			vim.keymap.set("n", "<F2>", dap.step_back)
 			vim.keymap.set("n", "<F3>", dap.restart)
-			vim.keymap.set("n", "<F4>", dap.step_into)
-			vim.keymap.set("n", "<F5>", dap.step_over)
+			vim.keymap.set("n", "<F4>", dap.step_over)
+			vim.keymap.set("n", "<F5>", dap.step_into)
 			vim.keymap.set("n", "<F6>", dap.step_out)
 
 			-- Auto open/close DAP UI
