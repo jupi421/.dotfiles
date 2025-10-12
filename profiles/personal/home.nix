@@ -1,7 +1,6 @@
 {config, pkgs, inputs, ... }:
-let
-	ovitoOverlay = (builtins.getFlake "/home/jay/.dotfiles/programs/extern/ovito").overlays.default;
-in {
+
+{
 
 	imports = [
 		../../programs/tmux/tmux.nix
@@ -20,8 +19,6 @@ in {
 	home.sessionVariables = {
 		EDITOR = "nvim";
 	};
-
-	nixpkgs.overlays = [ ovitoOverlay ];
 
 	home.packages = with pkgs; [
 		beeper

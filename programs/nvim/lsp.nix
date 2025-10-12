@@ -37,9 +37,15 @@
 				vim.keymap.set("i", "<A-k>", function() vim.lsp.buf.signature_help() end, opts)
 			end)
 
-			require("lspconfig")["clangd"].setup({
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+			vim.lsp.config('*', {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				root_markers = { '.git' },
+			})
+
+			vim.lsp.config('clangd', {
 				cmd = {
 					'clangd',
 					'--background-index',
@@ -48,14 +54,13 @@
 					'--all-scopes-completion',
 					'--log=error',
 					'--compile-commands-dir=build',
-					'--query-driver=/nix/store/*/bin/*'
+					'--query-driver=/nix/store/*/bin/*',
 				},
-				root_dir = require('lspconfig/util').root_pattern("compile_commands.json", "compile_flags.txt", ".git")
+				root_markers = { 'compile_commands.json', 'compile_flags.txt', '.git' },
+				filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
 			})
 
-			require("lspconfig")["pyright"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
+			vim.lsp.config('pyright', {
 				settings = {
 					python = {
 						analysis = {
@@ -67,11 +72,16 @@
 				},
 			})
 
-			require'lspconfig'.texlab.setup{}
-								
+			vim.lsp.config('texlab', {})
+
+			vim.lsp.enable('clangd')
+			vim.lsp.enable('pyright')
+			vim.lsp.enable('texlab')
+
 			local cmp = require('cmp')
-			local cmp_select = {behavior = cmp.SelectBehavior.Select}
-			
+			local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+
 			require('luasnip.loaders.from_vscode').lazy_load()
 
 			cmp.setup({
@@ -90,6 +100,6 @@
 					['<C-Space>'] = cmp.mapping.complete(),
 				}),
 			})
-		'';
+			'';
 	};
 }
