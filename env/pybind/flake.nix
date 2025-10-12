@@ -21,6 +21,7 @@
 					scipy
 					ase
 					pybind11
+					tqdm
 				]);
 
 			in

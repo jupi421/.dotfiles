@@ -35,6 +35,7 @@
 					modules = [
 						commonConfiguration
 						./hardware/hardware-configuration-pc.nix
+						./hardware/data_drive/data_drive_home.nix
 						./programs/syncthing/syncthing-pc.nix
 						./profiles/personal/is-pc.nix
 						./nvidia/gaming.nix
@@ -58,9 +59,9 @@
 					modules = [
 						commonConfiguration
 						./hardware/hardware-configuration-office.nix
+						./hardware/data_drive/data_drive_office.nix
 						./profiles/personal/is-pc.nix
 						./nvidia/office_nvidia.nix
-						./hardware/data_drive/data_drive_office.nix
 					];
 				};
 			};
