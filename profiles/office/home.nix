@@ -2,7 +2,8 @@
 
 let
 	ovitoOverlay = (builtins.getFlake "/home/jay/.dotfiles/programs/extern/ovito").overlays.default;
-in {
+in 
+{
 	imports = [
 		../../programs/tmux/tmux.nix
 		../../programs/nvim/nvim.nix
@@ -35,7 +36,7 @@ in {
 		fzf
 		gdb
 		gnuplot
-		htop
+		btop
 		kitty
 		loupe
 		notify
